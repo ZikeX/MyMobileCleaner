@@ -7,9 +7,12 @@
         <customObject id="-2" userLabel="File's Owner" customClass="MCStageScanDoneViewController">
             <connections>
                 <outlet property="btnClean" destination="XbA-4r-3ss" id="LAe-rI-l8m"/>
+                <outlet property="btnInfo" destination="6k3-rq-Uwf" id="V33-Gn-agl"/>
                 <outlet property="colorBackground" destination="ndR-XH-QeB" id="qY0-LB-6HG"/>
+                <outlet property="constraintTableViewHeight" destination="log-2z-1fc" id="6YQ-VW-eOE"/>
                 <outlet property="flashRing" destination="2mh-Bc-NZC" id="ec9-QD-nzr"/>
                 <outlet property="infoPopover" destination="6QC-lV-JiF" id="G4z-9D-jIf"/>
+                <outlet property="infoTableView" destination="aJI-2F-ZSj" id="ors-43-sJk"/>
                 <outlet property="labelSize" destination="4Ap-zu-aI9" id="IjY-nk-BjD"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -108,28 +111,28 @@ DQ
             </connections>
         </popover>
         <customView translatesAutoresizingMaskIntoConstraints="NO" id="Rra-Qu-pnN" userLabel="info">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
             <subviews>
-                <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="27" horizontalPageScroll="10" verticalLineScroll="27" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" scrollerKnobStyle="light" translatesAutoresizingMaskIntoConstraints="NO" id="Pqg-xD-TdH">
-                    <rect key="frame" x="10" y="10" width="300" height="180"/>
+                <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="25" horizontalPageScroll="10" verticalLineScroll="25" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" scrollerKnobStyle="light" translatesAutoresizingMaskIntoConstraints="NO" id="Pqg-xD-TdH">
+                    <rect key="frame" x="10" y="10" width="300" height="64"/>
                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="BGg-dN-ScN">
                         <rect key="frame" x="1" y="17" width="238" height="117"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView appearanceType="vibrantLight" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnReordering="NO" columnResizing="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="25" rowSizeStyle="automatic" viewBased="YES" id="aJI-2F-ZSj">
+                            <tableView appearanceType="vibrantLight" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnReordering="NO" columnResizing="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="23" rowSizeStyle="automatic" viewBased="YES" id="aJI-2F-ZSj">
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" red="0.0" green="0.41176470588235292" blue="0.85098039215686272" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn width="297" minWidth="40" maxWidth="1000" id="pJM-5P-vCF">
+                                    <tableColumn editable="NO" width="297" minWidth="40" maxWidth="1000" id="pJM-5P-vCF">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                         </tableHeaderCell>
-                                        <textFieldCell key="dataCell" lineBreakMode="truncatingMiddle" selectable="YES" editable="YES" alignment="left" id="grD-wI-ZoV">
+                                        <textFieldCell key="dataCell" lineBreakMode="truncatingMiddle" allowsUndo="NO" alignment="left" id="grD-wI-ZoV">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -137,7 +140,7 @@ DQ
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
                                             <customView identifier="MCStageScanDonePopoverCellView" id="dKI-rZ-T8r" customClass="MCStageScanDonePopoverCellView">
-                                                <rect key="frame" x="1" y="1" width="297" height="25"/>
+                                                <rect key="frame" x="1" y="1" width="297" height="23"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                 <subviews>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QJP-0M-1xM" userLabel="name">
@@ -150,7 +153,7 @@ DQ
                                                     </textField>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="QJP-0M-1xM" firstAttribute="top" secondItem="dKI-rZ-T8r" secondAttribute="top" constant="2" id="Nbn-pg-8hA"/>
+                                                    <constraint firstItem="QJP-0M-1xM" firstAttribute="top" secondItem="dKI-rZ-T8r" secondAttribute="top" id="Nbn-pg-8hA"/>
                                                     <constraint firstItem="QJP-0M-1xM" firstAttribute="leading" secondItem="dKI-rZ-T8r" secondAttribute="leading" constant="4" id="dMA-nS-b9Q"/>
                                                     <constraint firstAttribute="bottom" secondItem="QJP-0M-1xM" secondAttribute="bottom" constant="2" id="oZn-k1-VW1"/>
                                                     <constraint firstAttribute="trailing" secondItem="QJP-0M-1xM" secondAttribute="trailing" constant="4" id="vPO-5N-ZAL"/>
@@ -171,7 +174,7 @@ DQ
                         <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                     </clipView>
                     <constraints>
-                        <constraint firstAttribute="height" constant="180" id="log-2z-1fc"/>
+                        <constraint firstAttribute="height" constant="64" id="log-2z-1fc"/>
                         <constraint firstAttribute="width" constant="300" id="mNl-QE-lr8"/>
                     </constraints>
                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="xvh-JY-YfN">

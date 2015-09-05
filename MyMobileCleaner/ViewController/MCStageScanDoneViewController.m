@@ -11,6 +11,8 @@
 #import "MCFlashRingView.h"
 #import "MCStageScanDonePopoverCellView.h"
 
+static NSUInteger const kMaxNumberOfRowsInPopoverTableView = 6;
+
 @interface MCStageScanDoneViewController ()
 
 @property (weak) IBOutlet MCColorBackgroundView *colorBackground;
@@ -18,7 +20,11 @@
 @property (weak) IBOutlet NSTextField *labelSize;
 @property (weak) IBOutlet MCFlashRingView *flashRing;
 
+@property (weak) IBOutlet NSButton *btnInfo;
 @property (strong) IBOutlet NSPopover *infoPopover;
+@property (weak) IBOutlet NSTableView *infoTableView;
+@property (weak) IBOutlet NSLayoutConstraint *constraintTableViewHeight;
+
 @property (nonatomic, strong) NSMutableArray *allFilesName;
 
 @end
@@ -60,10 +66,25 @@
     self.labelSize.stringValue = [NSString stringWithFormat:((self.allFilesName.count > 1) ? NSLocalizedStringFromTable(@"scan.done.crash.log.info.many", @"MyMobileCleaner", @"scan.done") : NSLocalizedStringFromTable(@"scan.done.crash.log.info.single", @"MyMobileCleaner", @"scan.done")),
                                   @(self.allFilesName.count),
                                   [formatter stringFromByteCount:totalSize]];
+
+    self.btnInfo.hidden = !(self.allFilesName.count > 0);
+}
+
+- (void)resetHeightForTableView
+{
+    if (self.infoTableView.numberOfRows == 0) {
+        self.constraintTableViewHeight.constant = 0;
+
+    } else {
+        NSUInteger rows = MIN(self.infoTableView.numberOfRows, kMaxNumberOfRowsInPopoverTableView);
+        self.constraintTableViewHeight.constant = rows * ((NSView *)[self.infoTableView rowViewAtRow:0 makeIfNecessary:YES]).frame.size.height;
+    }
 }
 
 - (IBAction)clickInfo:(id)sender {
     NSButton *infoButton = sender;
+
+    [self resetHeightForTableView];
     [self.infoPopover showRelativeToRect:infoButton.bounds
                                   ofView:infoButton
                            preferredEdge:NSMinYEdge];
