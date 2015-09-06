@@ -11,7 +11,7 @@
 #import "MCFlashRingView.h"
 #import "MCStageScanDonePopoverCellView.h"
 
-static NSUInteger const kMaxNumberOfRowsInPopoverTableView = 6;
+static NSUInteger const kMaxNumberOfRowsInPopoverTableView = 7;
 
 @interface MCStageScanDoneViewController ()
 
