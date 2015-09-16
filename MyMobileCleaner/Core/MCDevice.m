@@ -63,8 +63,7 @@
     if ([self startConnection]) {
         if ([self startSession]) {
             CFTypeRef deviceType = SDMMD_AMDeviceCopyValue(_rawDevice, NULL, CFSTR(kProductType));
-            _deviceType = [NSString stringWithUTF8String:SDMMD_ResolveModelToName(deviceType)];
-            CFSafeRelease(deviceType);
+            _deviceType = [MCDevice deviceTypeNameForModel:(__bridge_transfer NSString *)deviceType];
 
             return YES;
 
@@ -103,8 +102,7 @@
         // type
         if ([self startSession]) {
             CFTypeRef deviceType = SDMMD_AMDeviceCopyValue(_rawDevice, NULL, CFSTR(kProductType));
-            _deviceType = [NSString stringWithUTF8String:SDMMD_ResolveModelToName(deviceType)];
-            CFSafeRelease(deviceType);
+            _deviceType = [MCDevice deviceTypeNameForModel:(__bridge_transfer NSString *)deviceType];
         }
     }
     return self;
@@ -149,8 +147,7 @@
                 if ([weakSelf reconnectDevice]) {
                     if ([weakSelf startSession]) {
                         CFTypeRef deviceType = SDMMD_AMDeviceCopyValue(weakSelf.rawDevice, NULL, CFSTR(kProductType));
-                        weakSelf.deviceType = [NSString stringWithUTF8String:SDMMD_ResolveModelToName(deviceType)];
-                        CFSafeRelease(deviceType);
+                        weakSelf.deviceType = [MCDevice deviceTypeNameForModel:(__bridge_transfer NSString *)deviceType];
                     }
                 }
 
@@ -486,6 +483,71 @@
     }
     
     return device;
+}
+
+#pragma mark - device type name
+
++ (NSString *)deviceTypeNameForModel:(NSString *)model
+{
+    // iPhone
+    if ([model isEqualToString:@"iPhone7,2"])    return @"iPhone 6";
+    if ([model isEqualToString:@"iPhone7,1"])    return @"iPhone 6 Plus";
+    if ([model isEqualToString:@"iPhone6,2"])    return @"iPhone 5S";
+    if ([model isEqualToString:@"iPhone6,1"])    return @"iPhone 5S";
+    if ([model isEqualToString:@"iPhone5,4"])    return @"iPhone 5C";
+    if ([model isEqualToString:@"iPhone5,3"])    return @"iPhone 5C";
+    if ([model isEqualToString:@"iPhone5,2"])    return @"iPhone 5 (CDMA)";
+    if ([model isEqualToString:@"iPhone5,1"])    return @"iPhone 5 (GSM)";
+    if ([model isEqualToString:@"iPhone4,1"])    return @"iPhone 4S";
+    if ([model isEqualToString:@"iPhone3,3"])    return @"iPhone 4 (CDMA)";
+    if ([model isEqualToString:@"iPhone3,1"])    return @"iPhone 4 (GSM)";
+    if ([model isEqualToString:@"iPhone2,1"])    return @"iPhone 3GS";
+    if ([model isEqualToString:@"iPhone1,2"])    return @"iPhone 3G";
+    if ([model isEqualToString:@"iPhone1,1"])    return @"iPhone 1G";
+
+    // iPad Air
+    if ([model isEqualToString:@"iPad5,4"])      return @"iPad Air 2 (CDMA)";
+    if ([model isEqualToString:@"iPad5,3"])      return @"iPad Air 2 (WiFi)";
+    if ([model isEqualToString:@"iPad4,3"])      return @"iPad Air (CDMA)";
+    if ([model isEqualToString:@"iPad4,2"])      return @"iPad Air (GSM)";
+    if ([model isEqualToString:@"iPad4,1"])      return @"iPad Air (WiFi)";
+
+    // iPad Mini
+    if ([model isEqualToString:@"iPad4,9"])      return @"iPad Mini 3 (CDMA)";
+    if ([model isEqualToString:@"iPad4,8"])      return @"iPad Mini 3 (CDMA)";
+    if ([model isEqualToString:@"iPad4,7"])      return @"iPad Mini 3 (WiFi)";
+    if ([model isEqualToString:@"iPad4,5"])      return @"iPad Mini Retina (CDMA)";
+    if ([model isEqualToString:@"iPad4,4"])      return @"iPad Mini Retina (WiFi)";
+    if ([model isEqualToString:@"iPad2,7"])      return @"iPad Mini (CDMA)";
+    if ([model isEqualToString:@"iPad2,6"])      return @"iPad Mini (GSM)";
+    if ([model isEqualToString:@"iPad2,5"])      return @"iPad Mini (WiFi)";
+
+    // iPad
+    if ([model isEqualToString:@"iPad3,6"])      return @"iPad 4 (CDMA)";
+    if ([model isEqualToString:@"iPad3,5"])      return @"iPad 4 (GSM)";
+    if ([model isEqualToString:@"iPad3,4"])      return @"iPad 4 (WiFi)";
+    if ([model isEqualToString:@"iPad3,3"])      return @"iPad 3 (GSM)";
+    if ([model isEqualToString:@"iPad3,2"])      return @"iPad 3 (CDMA)";
+    if ([model isEqualToString:@"iPad3,1"])      return @"iPad 3 (WiFi)";
+    if ([model isEqualToString:@"iPad2,4"])      return @"iPad 2 (WiFi)";
+    if ([model isEqualToString:@"iPad2,3"])      return @"iPad 2 (CDMA)";
+    if ([model isEqualToString:@"iPad2,2"])      return @"iPad 2 (GSM)";
+    if ([model isEqualToString:@"iPad2,1"])      return @"iPad 2 (WiFi)";
+    if ([model isEqualToString:@"iPad1,1"])      return @"iPad";
+
+    // iPod
+    if ([model isEqualToString:@"iPod7,1"])      return @"iPod Touch 6G";
+    if ([model isEqualToString:@"iPod5,1"])      return @"iPod Touch 5G";
+    if ([model isEqualToString:@"iPod4,1"])      return @"iPod Touch 4G";
+    if ([model isEqualToString:@"iPod3,1"])      return @"iPod Touch 3G";
+    if ([model isEqualToString:@"iPod2,1"])      return @"iPod Touch 2G";
+    if ([model isEqualToString:@"iPod1,1"])      return @"iPod Touch 1G";
+
+    // Simulator
+    if ([model isEqualToString:@"x86_64"])       return @"iOS Simulator";
+    if ([model isEqualToString:@"i386"])         return @"iOS Simulator";
+
+    return @"Unknown Device";
 }
 
 @end

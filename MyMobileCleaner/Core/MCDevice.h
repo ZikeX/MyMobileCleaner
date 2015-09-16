@@ -16,6 +16,8 @@
 @property (nonatomic, readonly, strong) NSString *deviceName;
 @property (nonatomic, readonly, strong) NSString *deviceType; // need device paired
 
++ (NSString *)deviceTypeNameForModel:(NSString *)model;
+
 - (instancetype)initWithRawDevice:(SDMMD_AMDeviceRef)rawDevice;
 
 - (BOOL)isConnectedDevice;
