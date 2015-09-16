@@ -19,10 +19,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="cbvBackgroundColor">
-                            <color key="value" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                            <color key="value" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="cbvBorderColor">
-                            <color key="value" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="value" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="cbvBorderWidth">
                             <real key="value" value="0.0"/>
@@ -33,10 +33,10 @@
                     </userDefinedRuntimeAttributes>
                 </customView>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tVV-zP-z13">
-                    <rect key="frame" x="40" y="36" width="320" height="240"/>
+                    <rect key="frame" x="40" y="66" width="320" height="180"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="320" id="Ak5-3Y-Kfa"/>
-                        <constraint firstAttribute="height" constant="240" id="O7N-Jf-P08"/>
+                        <constraint firstAttribute="height" constant="180" id="O7N-Jf-P08"/>
                     </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="pair" id="EzX-OP-Bxr"/>
                 </imageView>
