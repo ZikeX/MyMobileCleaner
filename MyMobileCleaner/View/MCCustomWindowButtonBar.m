@@ -40,7 +40,8 @@
 
 - (void)parentWindowDidResize:(NSNotification *)notification
 {
-    [self mouseExited:nil];
+    self.mouseInside = NO;
+    [self setNeedsDisplayForStandardWindowButtons];
 }
 
 - (void)layoutButtonsVertical:(BOOL)vertical
