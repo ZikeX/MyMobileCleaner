@@ -21,6 +21,7 @@
         [self setHasShadow:YES];
     }
 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(windowDidEndLiveResize:) name:NSWindowDidEndLiveResizeNotification object:self];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(theWindowDidDeminiaturize:) name:NSWindowDidDeminiaturizeNotification object:self];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(theWindowWillClose:) name:NSWindowWillCloseNotification object:self];
 
@@ -29,8 +30,15 @@
 
 - (void)theWindowWillClose:(NSNotification *)notification
 {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowDidEndLiveResizeNotification object:self];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowDidDeminiaturizeNotification object:self];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowWillCloseNotification object:self];
+}
+
+- (void)windowDidEndLiveResize:(NSNotification *)notification
+{
+    // force window to redraw shadow, or else sometimes the shadow's size is not equal to window size.
+    [self invalidateShadow];
 }
 
 - (void)theWindowDidDeminiaturize:(NSNotification *)notification
