@@ -38,11 +38,11 @@ static CGFloat barSpace = 0.03;
     return self;
 }
 
-- (void)drawRect:(NSRect)dirtyRect {
-    [super drawRect:dirtyRect];
-
-    // Drawing code here.
-}
+//- (void)drawRect:(NSRect)dirtyRect {
+//    [super drawRect:dirtyRect];
+//
+//    // Drawing code here.
+//}
 
 - (void)unloadData
 {

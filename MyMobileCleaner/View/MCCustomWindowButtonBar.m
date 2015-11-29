@@ -26,9 +26,11 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowDidResizeNotification object:self.window];
 }
 
-- (void)drawRect:(NSRect)dirtyRect {
-    [super drawRect:dirtyRect];
-}
+//- (void)drawRect:(NSRect)dirtyRect {
+//    [super drawRect:dirtyRect];
+//
+//    // Drawing code here.
+//}
 
 - (instancetype)initWithFrame:(NSRect)frameRect
 {

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MCMainWindowController">
@@ -21,96 +21,115 @@
             <rect key="contentRect" x="196" y="377" width="400" height="400"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
             <value key="minSize" type="size" width="400" height="400"/>
-            <view key="contentView" id="se5-gp-TjO" customClass="MCColorBackgroundView">
+            <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="0rw-yj-frg" userLabel="cavas">
+                    <visualEffectView wantsLayer="YES" blendingMode="behindWindow" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="zX4-kw-EAA">
                         <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
-                    </customView>
-                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="LTs-Dv-qEp" userLabel="line" customClass="MCColorBackgroundView">
-                        <rect key="frame" x="16" y="300" width="368" height="4"/>
+                        <subviews>
+                            <customView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0rw-yj-frg" userLabel="cavas">
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                                <animations/>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="LTs-Dv-qEp" userLabel="line" customClass="MCColorBackgroundView">
+                                <rect key="frame" x="16" y="300" width="368" height="4"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="NJ3-3o-3zY"/>
+                                </constraints>
+                                <animations/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cbvCornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="cbvBackgroundColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="cbvBorderColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Op-PH-Grg" userLabel="info">
+                                <rect key="frame" x="38" y="325" width="324" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="DbQ-qf-ebP"/>
+                                </constraints>
+                                <animations/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="iWm-HY-bZs">
+                                    <font key="font" metaFont="system" size="16"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NEl-lZ-5md" userLabel="title">
+                                <rect key="frame" x="196" y="352" width="8" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="7kS-8W-vPT"/>
+                                </constraints>
+                                <animations/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingMiddle" sendsActionOnEndEditing="YES" alignment="center" id="qKr-uZ-cgh">
+                                    <font key="font" metaFont="system" size="20"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="Q4H-7V-Tu1" userLabel="sound">
+                                <rect key="frame" x="368" y="368" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="BmR-3x-ERz"/>
+                                    <constraint firstAttribute="width" constant="16" id="Vdi-C2-4T3"/>
+                                </constraints>
+                                <animations/>
+                                <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="dYv-Io-uW1">
+                                    <behavior key="behavior" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="clickBtnSound:" target="-2" id="itP-bx-zOm"/>
+                                </connections>
+                            </button>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="M4c-IF-Mqd" customClass="MCCustomWindowButtonBar">
+                                <rect key="frame" x="16" y="344" width="20" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="7HN-zH-lVs"/>
+                                    <constraint firstAttribute="height" constant="40" id="RLt-mB-nlh"/>
+                                </constraints>
+                                <animations/>
+                            </customView>
+                        </subviews>
                         <constraints>
-                            <constraint firstAttribute="height" constant="4" id="NJ3-3o-3zY"/>
+                            <constraint firstAttribute="trailing" secondItem="0rw-yj-frg" secondAttribute="trailing" id="4pU-lK-AU9"/>
+                            <constraint firstAttribute="trailing" secondItem="LTs-Dv-qEp" secondAttribute="trailing" constant="16" id="5qa-bV-Syo"/>
+                            <constraint firstItem="M4c-IF-Mqd" firstAttribute="top" secondItem="zX4-kw-EAA" secondAttribute="top" constant="16" id="66I-7z-U80"/>
+                            <constraint firstItem="NEl-lZ-5md" firstAttribute="centerX" secondItem="zX4-kw-EAA" secondAttribute="centerX" id="6TG-7L-iwL"/>
+                            <constraint firstItem="Q4H-7V-Tu1" firstAttribute="top" secondItem="zX4-kw-EAA" secondAttribute="top" constant="16" id="DQZ-bj-UeL"/>
+                            <constraint firstAttribute="trailing" secondItem="Q4H-7V-Tu1" secondAttribute="trailing" constant="16" id="Epb-KS-mvu"/>
+                            <constraint firstItem="M4c-IF-Mqd" firstAttribute="leading" secondItem="zX4-kw-EAA" secondAttribute="leading" constant="16" id="LBe-td-qi3"/>
+                            <constraint firstItem="NEl-lZ-5md" firstAttribute="top" secondItem="zX4-kw-EAA" secondAttribute="top" constant="24" id="OTB-g2-aq4"/>
+                            <constraint firstItem="4Op-PH-Grg" firstAttribute="top" secondItem="NEl-lZ-5md" secondAttribute="bottom" constant="8" symbolic="YES" id="VOF-S1-rG2"/>
+                            <constraint firstItem="LTs-Dv-qEp" firstAttribute="leading" secondItem="zX4-kw-EAA" secondAttribute="leading" constant="16" id="VQX-9d-RzA"/>
+                            <constraint firstAttribute="bottom" secondItem="0rw-yj-frg" secondAttribute="bottom" id="bPK-s0-xpu"/>
+                            <constraint firstItem="4Op-PH-Grg" firstAttribute="centerX" secondItem="zX4-kw-EAA" secondAttribute="centerX" id="eXS-Id-6ca"/>
+                            <constraint firstItem="LTs-Dv-qEp" firstAttribute="top" secondItem="zX4-kw-EAA" secondAttribute="top" constant="96" id="gzy-LN-rdR"/>
+                            <constraint firstItem="0rw-yj-frg" firstAttribute="leading" secondItem="zX4-kw-EAA" secondAttribute="leading" id="uOE-Cv-Q08"/>
+                            <constraint firstItem="0rw-yj-frg" firstAttribute="top" secondItem="zX4-kw-EAA" secondAttribute="top" id="w4O-qG-Qmb"/>
                         </constraints>
+                        <animations/>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cbvCornerRadius">
-                                <real key="value" value="8"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="6"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
-                    </customView>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Op-PH-Grg" userLabel="info">
-                        <rect key="frame" x="38" y="324" width="324" height="19"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="320" id="DbQ-qf-ebP"/>
-                        </constraints>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="iWm-HY-bZs">
-                            <font key="font" metaFont="system" size="16"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NEl-lZ-5md" userLabel="title">
-                        <rect key="frame" x="196" y="351" width="8" height="29"/>
-                        <constraints>
-                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="7kS-8W-vPT"/>
-                        </constraints>
-                        <textFieldCell key="cell" lineBreakMode="truncatingMiddle" sendsActionOnEndEditing="YES" alignment="center" id="qKr-uZ-cgh">
-                            <font key="font" metaFont="system" size="24"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <button translatesAutoresizingMaskIntoConstraints="NO" id="Q4H-7V-Tu1" userLabel="sound">
-                        <rect key="frame" x="368" y="368" width="16" height="16"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="16" id="BmR-3x-ERz"/>
-                            <constraint firstAttribute="width" constant="16" id="Vdi-C2-4T3"/>
-                        </constraints>
-                        <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="dYv-Io-uW1">
-                            <behavior key="behavior" lightByContents="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="clickBtnSound:" target="-2" id="itP-bx-zOm"/>
-                        </connections>
-                    </button>
-                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="M4c-IF-Mqd" customClass="MCCustomWindowButtonBar">
-                        <rect key="frame" x="16" y="344" width="20" height="40"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="20" id="7HN-zH-lVs"/>
-                            <constraint firstAttribute="height" constant="40" id="RLt-mB-nlh"/>
-                        </constraints>
-                    </customView>
+                    </visualEffectView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="M4c-IF-Mqd" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="16" id="0ev-Yj-yrM"/>
-                    <constraint firstItem="0rw-yj-frg" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="9xh-WJ-0jN"/>
-                    <constraint firstItem="0rw-yj-frg" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="AZJ-Sp-Ppc"/>
-                    <constraint firstItem="NEl-lZ-5md" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" symbolic="YES" id="DyI-72-LXF"/>
-                    <constraint firstAttribute="trailing" secondItem="LTs-Dv-qEp" secondAttribute="trailing" constant="16" id="IoZ-Fw-HQ8"/>
-                    <constraint firstAttribute="centerX" secondItem="NEl-lZ-5md" secondAttribute="centerX" id="TVI-Rg-soL"/>
-                    <constraint firstItem="LTs-Dv-qEp" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="16" id="TX3-Cf-xyb"/>
-                    <constraint firstAttribute="trailing" secondItem="0rw-yj-frg" secondAttribute="trailing" id="UqZ-pD-JKg"/>
-                    <constraint firstAttribute="trailing" secondItem="Q4H-7V-Tu1" secondAttribute="trailing" constant="16" id="ar4-hO-6VN"/>
-                    <constraint firstItem="4Op-PH-Grg" firstAttribute="top" secondItem="NEl-lZ-5md" secondAttribute="bottom" constant="8" symbolic="YES" id="ehX-oS-t6g"/>
-                    <constraint firstItem="M4c-IF-Mqd" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="16" id="l74-O7-xzx"/>
-                    <constraint firstItem="Q4H-7V-Tu1" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="16" id="sVZ-uJ-kmK"/>
-                    <constraint firstItem="LTs-Dv-qEp" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="96" id="wa9-7d-Nm7"/>
-                    <constraint firstAttribute="bottom" secondItem="0rw-yj-frg" secondAttribute="bottom" id="xNI-Mk-aoQ"/>
-                    <constraint firstAttribute="centerX" secondItem="4Op-PH-Grg" secondAttribute="centerX" id="zUZ-2s-Qdd"/>
+                    <constraint firstItem="zX4-kw-EAA" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" id="7Kt-Nj-n3p"/>
+                    <constraint firstAttribute="trailing" secondItem="zX4-kw-EAA" secondAttribute="trailing" id="F3w-gz-w8K"/>
+                    <constraint firstAttribute="bottom" secondItem="zX4-kw-EAA" secondAttribute="bottom" id="lSX-KF-eCH"/>
+                    <constraint firstItem="zX4-kw-EAA" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="lsL-cv-wsz"/>
                 </constraints>
-                <userDefinedRuntimeAttributes>
-                    <userDefinedRuntimeAttribute type="number" keyPath="cbvCornerRadius">
-                        <real key="value" value="6"/>
-                    </userDefinedRuntimeAttribute>
-                    <userDefinedRuntimeAttribute type="number" keyPath="cbvBorderColor">
-                        <real key="value" value="1"/>
-                    </userDefinedRuntimeAttribute>
-                    <userDefinedRuntimeAttribute type="color" keyPath="cbvBorderColor">
-                        <color key="value" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </userDefinedRuntimeAttribute>
-                </userDefinedRuntimeAttributes>
+                <animations/>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>

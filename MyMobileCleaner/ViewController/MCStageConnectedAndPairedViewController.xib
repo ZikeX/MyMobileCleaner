@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MCStageConnectedAndPairedViewController">
@@ -25,12 +25,13 @@
             <subviews>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="BwZ-kg-xf3" customClass="MCColorBackgroundView">
                     <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                    <animations/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="cbvBackgroundColor">
-                            <color key="value" red="0.0" green="0.50196081399917603" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                            <color key="value" red="0.0" green="0.50196081399917603" blue="1" alpha="0.075026041666666668" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="cbvBorderColor">
-                            <color key="value" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="value" red="0.0" green="0.50196081399917603" blue="1" alpha="0.084036458333333328" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="cbvBorderWidth">
                             <real key="value" value="0.0"/>
@@ -46,16 +47,18 @@
                         <constraint firstAttribute="height" constant="188" id="0xK-kx-012"/>
                         <constraint firstAttribute="width" constant="188" id="pLZ-9h-pFW"/>
                     </constraints>
+                    <animations/>
                 </customView>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="G9e-HL-Eh6" userLabel="scan">
-                    <rect key="frame" x="124" y="80" width="151" height="151"/>
+                    <rect key="frame" x="124" y="80.5" width="151" height="151"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="151" id="6fK-ZZ-LMR"/>
                         <constraint firstAttribute="width" constant="151" id="LMi-TT-lgH"/>
                     </constraints>
+                    <animations/>
                     <buttonCell key="cell" type="bevel" title="Scan" bezelStyle="regularSquare" image="button" imagePosition="overlaps" alignment="center" alternateImage="button_click" imageScaling="proportionallyDown" inset="2" id="SIo-wR-4Dl">
                         <behavior key="behavior" lightByContents="YES"/>
-                        <font key="font" size="40" name="HelveticaNeue-Light"/>
+                        <font key="font" metaFont="system" size="40"/>
                         <string key="keyEquivalent" base64-UTF8="YES">
 DQ
 </string>
@@ -65,9 +68,10 @@ DQ
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="J6j-KP-vYf" userLabel="disk">
-                    <rect key="frame" x="99" y="259" width="202" height="29"/>
+                    <rect key="frame" x="95.5" y="259.5" width="209" height="29"/>
+                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Device Disk Usage" id="QqZ-UJ-NWT">
-                        <font key="font" size="24" name="HelveticaNeue-Light"/>
+                        <font key="font" metaFont="system" size="24"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -76,7 +80,7 @@ DQ
                     <rect key="frame" x="8" y="0.0" width="128" height="62"/>
                     <subviews>
                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="Rj1-sX-egy">
-                            <rect key="frame" x="39" y="34" width="50" height="20"/>
+                            <rect key="frame" x="38" y="37" width="52" height="17"/>
                             <subviews>
                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="Hra-BO-9rp" userLabel="dot" customClass="MCColorBackgroundView">
                                     <rect key="frame" x="0.0" y="3" width="10" height="10"/>
@@ -84,6 +88,7 @@ DQ
                                         <constraint firstAttribute="height" constant="10" id="Ahj-cA-YXI"/>
                                         <constraint firstAttribute="width" constant="10" id="kqI-o5-dtx"/>
                                     </constraints>
+                                    <animations/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cbvBorderWidth">
                                             <real key="value" value="0.050000000000000003"/>
@@ -100,9 +105,10 @@ DQ
                                     </userDefinedRuntimeAttributes>
                                 </customView>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4oi-KU-htu" userLabel="cat">
-                                    <rect key="frame" x="14" y="0.0" width="38" height="20"/>
+                                    <rect key="frame" x="14" y="0.0" width="40" height="17"/>
+                                    <animations/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Used" id="xhW-9M-RZy" userLabel="cat">
-                                        <font key="font" size="13" name="HelveticaNeue-Light"/>
+                                        <font key="font" metaFont="system"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
@@ -116,9 +122,11 @@ DQ
                                 <constraint firstItem="4oi-KU-htu" firstAttribute="leading" secondItem="Hra-BO-9rp" secondAttribute="trailing" constant="6" id="oiZ-hN-qGe"/>
                                 <constraint firstAttribute="bottom" secondItem="Hra-BO-9rp" secondAttribute="bottom" constant="3" id="tyV-ms-LyV"/>
                             </constraints>
+                            <animations/>
                         </customView>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xAa-mp-UKp">
-                            <rect key="frame" x="60" y="13" width="8" height="17"/>
+                            <rect key="frame" x="60" y="16" width="8" height="17"/>
+                            <animations/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="3oL-2b-Aee">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -133,12 +141,13 @@ DQ
                         <constraint firstAttribute="centerX" secondItem="xAa-mp-UKp" secondAttribute="centerX" id="ufa-3a-Px4"/>
                         <constraint firstAttribute="centerX" secondItem="Rj1-sX-egy" secondAttribute="centerX" id="w1Y-Hx-svU"/>
                     </constraints>
+                    <animations/>
                 </customView>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="nrA-Gl-CFX" userLabel="reserved">
                     <rect key="frame" x="136" y="0.0" width="128" height="62"/>
                     <subviews>
                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="vXR-AV-m7H">
-                            <rect key="frame" x="27" y="34" width="73" height="20"/>
+                            <rect key="frame" x="25" y="37" width="77" height="17"/>
                             <subviews>
                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="2Jv-3A-d0L" userLabel="dot" customClass="MCColorBackgroundView">
                                     <rect key="frame" x="0.0" y="3" width="10" height="10"/>
@@ -146,6 +155,7 @@ DQ
                                         <constraint firstAttribute="width" constant="10" id="azX-0e-CHc"/>
                                         <constraint firstAttribute="height" constant="10" id="hYm-T6-sNd"/>
                                     </constraints>
+                                    <animations/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cbvBorderWidth">
                                             <real key="value" value="0.050000000000000003"/>
@@ -162,9 +172,10 @@ DQ
                                     </userDefinedRuntimeAttributes>
                                 </customView>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9m7-uR-Ujx" userLabel="cat">
-                                    <rect key="frame" x="14" y="0.0" width="61" height="20"/>
+                                    <rect key="frame" x="14" y="0.0" width="65" height="17"/>
+                                    <animations/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Reserved" id="KHh-eP-Jgb" userLabel="cat">
-                                        <font key="font" size="13" name="HelveticaNeue-Light"/>
+                                        <font key="font" metaFont="system"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
@@ -178,9 +189,11 @@ DQ
                                 <constraint firstAttribute="bottom" secondItem="9m7-uR-Ujx" secondAttribute="bottom" id="dDv-qD-BkR"/>
                                 <constraint firstItem="9m7-uR-Ujx" firstAttribute="leading" secondItem="2Jv-3A-d0L" secondAttribute="trailing" constant="6" id="gAs-lM-QGm"/>
                             </constraints>
+                            <animations/>
                         </customView>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nmU-lH-tqG">
-                            <rect key="frame" x="60" y="13" width="8" height="17"/>
+                            <rect key="frame" x="60" y="16" width="8" height="17"/>
+                            <animations/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="4uF-xl-B7m">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -195,12 +208,13 @@ DQ
                         <constraint firstAttribute="centerX" secondItem="nmU-lH-tqG" secondAttribute="centerX" id="hZg-yw-NP7"/>
                         <constraint firstItem="nmU-lH-tqG" firstAttribute="top" secondItem="vXR-AV-m7H" secondAttribute="bottom" constant="4" id="sq3-FY-qpS"/>
                     </constraints>
+                    <animations/>
                 </customView>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="9hm-ma-3fd" userLabel="free">
                     <rect key="frame" x="264" y="0.0" width="128" height="62"/>
                     <subviews>
                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="wi8-fe-Y3h">
-                            <rect key="frame" x="41" y="34" width="45" height="20"/>
+                            <rect key="frame" x="40" y="37" width="47" height="17"/>
                             <subviews>
                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="6dm-bY-pWv" userLabel="dot" customClass="MCColorBackgroundView">
                                     <rect key="frame" x="0.0" y="3" width="10" height="10"/>
@@ -208,6 +222,7 @@ DQ
                                         <constraint firstAttribute="width" constant="10" id="KT0-4o-6n9"/>
                                         <constraint firstAttribute="height" constant="10" id="eto-vc-sa2"/>
                                     </constraints>
+                                    <animations/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cbvBorderWidth">
                                             <real key="value" value="0.050000000000000003"/>
@@ -224,9 +239,10 @@ DQ
                                     </userDefinedRuntimeAttributes>
                                 </customView>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="upi-Om-ldr" userLabel="cat">
-                                    <rect key="frame" x="14" y="0.0" width="33" height="20"/>
+                                    <rect key="frame" x="14" y="0.0" width="35" height="17"/>
+                                    <animations/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Free" id="7gy-IQ-5Jz" userLabel="cat">
-                                        <font key="font" size="13" name="HelveticaNeue-Light"/>
+                                        <font key="font" metaFont="system"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
@@ -240,9 +256,11 @@ DQ
                                 <constraint firstAttribute="trailing" secondItem="upi-Om-ldr" secondAttribute="trailing" id="ljZ-oF-93Y"/>
                                 <constraint firstItem="upi-Om-ldr" firstAttribute="top" secondItem="wi8-fe-Y3h" secondAttribute="top" id="v2X-lS-SfP"/>
                             </constraints>
+                            <animations/>
                         </customView>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="53x-4E-kV0">
-                            <rect key="frame" x="60" y="13" width="8" height="17"/>
+                            <rect key="frame" x="60" y="16" width="8" height="17"/>
+                            <animations/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="gEA-xv-I7j">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -257,6 +275,7 @@ DQ
                         <constraint firstAttribute="width" constant="128" id="p2j-Pq-kVh"/>
                         <constraint firstItem="53x-4E-kV0" firstAttribute="top" secondItem="wi8-fe-Y3h" secondAttribute="bottom" constant="4" id="pSu-jZ-MiQ"/>
                     </constraints>
+                    <animations/>
                 </customView>
             </subviews>
             <constraints>
@@ -280,6 +299,7 @@ DQ
                 <constraint firstItem="nrA-Gl-CFX" firstAttribute="leading" secondItem="CfM-sj-6tZ" secondAttribute="trailing" id="xPr-AL-Fg1"/>
                 <constraint firstItem="9hm-ma-3fd" firstAttribute="leading" secondItem="nrA-Gl-CFX" secondAttribute="trailing" id="xyh-0o-Jgv"/>
             </constraints>
+            <animations/>
         </customView>
     </objects>
     <resources>

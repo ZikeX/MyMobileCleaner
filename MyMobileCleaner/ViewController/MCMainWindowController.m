@@ -55,10 +55,6 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
 
-    // !!! important, or else the subviews in contentView maybe abnormal.
-    // !!! because the contentView implements [drawRect:] to draw by itself.
-    [self.window.contentView setWantsLayer:YES];
-
     [self updateUIStatus];
 
     self.currentUIStage = -1;

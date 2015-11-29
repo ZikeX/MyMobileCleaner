@@ -17,11 +17,11 @@
 
 @implementation MCFlashRingView
 
-- (void)drawRect:(NSRect)dirtyRect {
-    [super drawRect:dirtyRect];
-    
-    // Drawing code here.
-}
+//- (void)drawRect:(NSRect)dirtyRect {
+//    [super drawRect:dirtyRect];
+//    
+//    // Drawing code here.
+//}
 
 - (id)initWithFrame:(NSRect)frame
 {

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MCStageConnectedButUnPairedViewController">
@@ -17,12 +17,13 @@
             <subviews>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="qt1-Mh-YlD" customClass="MCColorBackgroundView">
                     <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                    <animations/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="cbvBackgroundColor">
-                            <color key="value" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="value" red="1" green="1" blue="0.0" alpha="0.080286458333333338" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="cbvBorderColor">
-                            <color key="value" red="1" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="value" red="1" green="1" blue="0.0" alpha="0.082890624999999996" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="cbvBorderWidth">
                             <real key="value" value="0.0"/>
@@ -38,6 +39,7 @@
                         <constraint firstAttribute="width" constant="320" id="Ak5-3Y-Kfa"/>
                         <constraint firstAttribute="height" constant="180" id="O7N-Jf-P08"/>
                     </constraints>
+                    <animations/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="pair" id="EzX-OP-Bxr"/>
                 </imageView>
             </subviews>
@@ -49,6 +51,7 @@
                 <constraint firstAttribute="centerX" secondItem="tVV-zP-z13" secondAttribute="centerX" id="hsr-8z-kgz"/>
                 <constraint firstAttribute="trailing" secondItem="qt1-Mh-YlD" secondAttribute="trailing" id="llY-eW-4qK"/>
             </constraints>
+            <animations/>
         </customView>
     </objects>
     <resources>
