@@ -241,12 +241,7 @@
 				E5B240341B89CF0800A2BC03 /* MyMobileCleaner.entitlements */,
 				84F03A9B1B82D79200FFFA28 /* AppDelegate.h */,
 				84F03A9C1B82D79200FFFA28 /* AppDelegate.m */,
-				E5C578DD1B916FC80035AE03 /* LogFormatter.h */,
-				E5C578DE1B916FC80035AE03 /* LogFormatter.m */,
-				E5CB5F471B9813A8008FEA0C /* MCConfig.h */,
-				E5CB5F481B9813A8008FEA0C /* MCConfig.m */,
-				E5EAA0541C0AD1D800CF832C /* NSFont+SetupFont.h */,
-				E5EAA0551C0AD1D800CF832C /* NSFont+SetupFont.m */,
+				E5EAA0571C0AE07900CF832C /* Common */,
 				84F03AC01B82DAA200FFFA28 /* Core */,
 				84BEE15F1B85C379000F3DC1 /* ViewController */,
 				84BEE1901B86C869000F3DC1 /* View */,
@@ -289,6 +284,19 @@
 				E57FAD6D1B84B33100ABF2D0 /* MCDeviceInfoHub.m */,
 			);
 			name = Core;
+			sourceTree = "<group>";
+		};
+		E5EAA0571C0AE07900CF832C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E5C578DD1B916FC80035AE03 /* LogFormatter.h */,
+				E5C578DE1B916FC80035AE03 /* LogFormatter.m */,
+				E5CB5F471B9813A8008FEA0C /* MCConfig.h */,
+				E5CB5F481B9813A8008FEA0C /* MCConfig.m */,
+				E5EAA0541C0AD1D800CF832C /* NSFont+SetupFont.h */,
+				E5EAA0551C0AD1D800CF832C /* NSFont+SetupFont.m */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 		E7CF8EF5A00D9F53E7845844 /* Frameworks */ = {
