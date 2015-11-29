@@ -10,6 +10,7 @@
 #import "MCDeviceController.h"
 #import "MCColorBackgroundView.h"
 #import "LogFormatter.h"
+#import "NSFont+SetupFont.h"
 
 static CGFloat const kDefaultWaitDuration = 0.02;
 

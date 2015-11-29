@@ -57,7 +57,7 @@
                     <animations/>
                     <buttonCell key="cell" type="bevel" title="Clean" bezelStyle="regularSquare" image="button" imagePosition="overlaps" alignment="center" alternateImage="button_click" imageScaling="proportionallyDown" inset="2" id="lG1-Na-9Vc">
                         <behavior key="behavior" lightByContents="YES"/>
-                        <font key="font" metaFont="system" size="40"/>
+                        <font key="font" size="40" name="HelveticaNeue-UltraLight"/>
                         <string key="keyEquivalent" base64-UTF8="YES">
 DQ
 </string>
@@ -67,13 +67,13 @@ DQ
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ap-zu-aI9" userLabel="size">
-                    <rect key="frame" x="18" y="259" width="364" height="29"/>
+                    <rect key="frame" x="18" y="259.5" width="364" height="24"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="360" id="0R0-fp-7wj"/>
                     </constraints>
                     <animations/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="xT1-rD-ffc">
-                        <font key="font" metaFont="system" size="24"/>
+                        <font key="font" metaFont="system" size="20"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -207,7 +207,7 @@ DQ
                 <constraint firstAttribute="bottom" secondItem="Pqg-xD-TdH" secondAttribute="bottom" constant="10" id="tVS-UO-cTe"/>
             </constraints>
             <animations/>
-            <point key="canvasLocation" x="321" y="626"/>
+            <point key="canvasLocation" x="197" y="560"/>
         </customView>
     </objects>
     <resources>

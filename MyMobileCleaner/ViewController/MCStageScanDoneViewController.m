@@ -40,6 +40,20 @@ static NSUInteger const kMaxNumberOfRowsInPopoverTableView = 7;
     return self;
 }
 
+- (void)setupFont
+{
+    [NSFont setupSystemFontForNSControl:self.btnClean
+                               withSize:40.0
+                                 weight:kSetupFontWeightUltraLight];
+}
+
+- (void)loadView
+{
+    [super loadView];
+    
+    [self setupFont];
+}
+
 - (void)stageViewDidAppear
 {
     [self.flashRing startFlashRingWithColor:[NSColor greenColor]];
@@ -106,6 +120,9 @@ static NSUInteger const kMaxNumberOfRowsInPopoverTableView = 7;
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
     MCStageScanDonePopoverCellView *cellView = [tableView makeViewWithIdentifier:@"MCStageScanDonePopoverCellView" owner:self];
+    [NSFont setupSystemFontForNSControl:cellView.name
+                               withSize:14.0
+                                 weight:kSetupFontWeightLight];
     cellView.name.stringValue = self.allFilesName[row];
 
     return cellView;

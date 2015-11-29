@@ -51,13 +51,13 @@
                                 </userDefinedRuntimeAttributes>
                             </customView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Op-PH-Grg" userLabel="info">
-                                <rect key="frame" x="38" y="325" width="324" height="19"/>
+                                <rect key="frame" x="38" y="321" width="324" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="DbQ-qf-ebP"/>
                                 </constraints>
                                 <animations/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="iWm-HY-bZs">
-                                    <font key="font" metaFont="system" size="16"/>
+                                    <font key="font" size="16" name="HelveticaNeue-Light"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>

@@ -45,13 +45,13 @@
                     <animations/>
                 </progressIndicator>
                 <textField hidden="YES" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uBa-JB-Vvv" userLabel="errorInfo">
-                    <rect key="frame" x="18" y="248" width="364" height="19"/>
+                    <rect key="frame" x="18" y="248" width="364" height="23"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="360" id="d7d-RP-OyY"/>
                     </constraints>
                     <animations/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Something is wrong. Please restart the app." id="Kg9-hT-FsQ">
-                        <font key="font" metaFont="system" size="16"/>
+                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>

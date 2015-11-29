@@ -23,6 +23,9 @@
 @property (weak) IBOutlet NSTextField *labelSizeUsed;
 @property (weak) IBOutlet NSTextField *labelSizeReserved;
 @property (weak) IBOutlet NSTextField *labelSizeFree;
+@property (weak) IBOutlet NSTextField *labelCatUsed;
+@property (weak) IBOutlet NSTextField *labelCatReserved;
+@property (weak) IBOutlet NSTextField *labelCatFree;
 
 @end
 
@@ -35,6 +38,39 @@
         self.manager = manager;
     }
     return self;
+}
+
+- (void)setupFont
+{
+    [NSFont setupSystemFontForNSControl:self.btnScan
+                               withSize:40.0
+                                 weight:kSetupFontWeightUltraLight];
+
+    [NSFont setupSystemFontForNSControl:self.labelSizeUsed
+                               withSize:13.0
+                                 weight:kSetupFontWeightLight];
+    [NSFont setupSystemFontForNSControl:self.labelSizeReserved
+                               withSize:13.0
+                                 weight:kSetupFontWeightLight];
+    [NSFont setupSystemFontForNSControl:self.labelSizeFree
+                               withSize:13.0
+                                 weight:kSetupFontWeightLight];
+    [NSFont setupSystemFontForNSControl:self.labelCatUsed
+                               withSize:13.0
+                                 weight:kSetupFontWeightLight];
+    [NSFont setupSystemFontForNSControl:self.labelCatReserved
+                               withSize:13.0
+                                 weight:kSetupFontWeightLight];
+    [NSFont setupSystemFontForNSControl:self.labelCatFree
+                               withSize:13.0
+                                 weight:kSetupFontWeightLight];
+}
+
+- (void)loadView
+{
+    [super loadView];
+
+    [self setupFont];
 }
 
 - (void)stageViewDidAppear

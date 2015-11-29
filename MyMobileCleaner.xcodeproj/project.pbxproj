@@ -46,6 +46,7 @@
 		E5CB5F491B9813A8008FEA0C /* MCConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CB5F481B9813A8008FEA0C /* MCConfig.m */; };
 		E5E9E84A1B8CB49700FF39C4 /* MCFlashRingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E9E8491B8CB49700FF39C4 /* MCFlashRingView.m */; };
 		E5E9E84D1B8CC5B800FF39C4 /* MCStageScanDonePopoverCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E9E84C1B8CC5B800FF39C4 /* MCStageScanDonePopoverCellView.m */; };
+		E5EAA0561C0AD1D800CF832C /* NSFont+SetupFont.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EAA0551C0AD1D800CF832C /* NSFont+SetupFont.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -129,6 +130,8 @@
 		E5E9E8491B8CB49700FF39C4 /* MCFlashRingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCFlashRingView.m; path = View/MCFlashRingView.m; sourceTree = "<group>"; };
 		E5E9E84B1B8CC5B800FF39C4 /* MCStageScanDonePopoverCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCStageScanDonePopoverCellView.h; path = View/MCStageScanDonePopoverCellView.h; sourceTree = "<group>"; };
 		E5E9E84C1B8CC5B800FF39C4 /* MCStageScanDonePopoverCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCStageScanDonePopoverCellView.m; path = View/MCStageScanDonePopoverCellView.m; sourceTree = "<group>"; };
+		E5EAA0541C0AD1D800CF832C /* NSFont+SetupFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFont+SetupFont.h"; sourceTree = "<group>"; };
+		E5EAA0551C0AD1D800CF832C /* NSFont+SetupFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFont+SetupFont.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +245,8 @@
 				E5C578DE1B916FC80035AE03 /* LogFormatter.m */,
 				E5CB5F471B9813A8008FEA0C /* MCConfig.h */,
 				E5CB5F481B9813A8008FEA0C /* MCConfig.m */,
+				E5EAA0541C0AD1D800CF832C /* NSFont+SetupFont.h */,
+				E5EAA0551C0AD1D800CF832C /* NSFont+SetupFont.m */,
 				84F03AC01B82DAA200FFFA28 /* Core */,
 				84BEE15F1B85C379000F3DC1 /* ViewController */,
 				84BEE1901B86C869000F3DC1 /* View */,
@@ -419,6 +424,7 @@
 				E5E9E84D1B8CC5B800FF39C4 /* MCStageScanDonePopoverCellView.m in Sources */,
 				E5E9E84A1B8CB49700FF39C4 /* MCFlashRingView.m in Sources */,
 				84BEE1691B85CD48000F3DC1 /* MCStageViewController.m in Sources */,
+				E5EAA0561C0AD1D800CF832C /* NSFont+SetupFont.m in Sources */,
 				84F03A9F1B82D79200FFFA28 /* main.m in Sources */,
 				84BEE18E1B86C41B000F3DC1 /* MCStageCleanDoneViewController.m in Sources */,
 				84F03AC71B83204600FFFA28 /* MCDevice.m in Sources */,

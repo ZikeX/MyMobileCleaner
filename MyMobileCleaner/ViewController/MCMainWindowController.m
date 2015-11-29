@@ -8,6 +8,7 @@
 
 #import "MCMainWindowController.h"
 #import "MCConfig.h"
+#import "NSFont+SetupFont.h"
 #import "MCCustomWindowButtonBar.h"
 #import "MCStageNoConnectionViewController.h"
 #import "MCStageConnectedButUnPairedViewController.h"
@@ -55,10 +56,19 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
 
+    [self setupFont];
+
     [self updateUIStatus];
 
     self.currentUIStage = -1;
     [self showDefaultDisConnectStatus];
+}
+
+- (void)setupFont
+{
+    [NSFont setupSystemFontForNSControl:self.labelInfo
+                               withSize:16.0
+                                 weight:kSetupFontWeightLight];
 }
 
 - (void)showDefaultDisConnectStatus

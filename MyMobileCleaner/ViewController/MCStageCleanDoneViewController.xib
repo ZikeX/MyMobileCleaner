@@ -21,10 +21,10 @@
                     <animations/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="cbvBackgroundColor">
-                            <color key="value" red="0.0" green="1" blue="0.0" alpha="0.076510416666666664" colorSpace="calibratedRGB"/>
+                            <color key="value" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="0.075390625000000003" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="cbvBorderColor">
-                            <color key="value" red="0.0" green="1" blue="0.0" alpha="0.082890624999999996" colorSpace="calibratedRGB"/>
+                            <color key="value" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="0.084010416666666671" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="cbvBorderWidth">
                             <real key="value" value="0.0"/>
@@ -35,13 +35,13 @@
                     </userDefinedRuntimeAttributes>
                 </customView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g9t-KP-YQC">
-                    <rect key="frame" x="18" y="248" width="364" height="29"/>
+                    <rect key="frame" x="18" y="248" width="364" height="24"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="360" id="9uk-yU-703"/>
                     </constraints>
                     <animations/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Clean Successfully" id="rrQ-cN-wcg">
-                        <font key="font" metaFont="system" size="24"/>
+                        <font key="font" metaFont="system" size="20"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -55,7 +55,7 @@
                     <animations/>
                     <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="like" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="zna-cX-DUc" userLabel="done">
                         <behavior key="behavior" lightByContents="YES"/>
-                        <font key="font" metaFont="system" size="40"/>
+                        <font key="font" metaFont="system"/>
                         <string key="keyEquivalent" base64-UTF8="YES">
 DQ
 </string>

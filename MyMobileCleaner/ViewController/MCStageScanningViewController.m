@@ -31,6 +31,20 @@
     return self;
 }
 
+- (void)setupFont
+{
+    [NSFont setupSystemFontForNSControl:self.labelError
+                               withSize:16.0
+                                 weight:kSetupFontWeightLight];
+}
+
+- (void)loadView
+{
+    [super loadView];
+    
+    [self setupFont];
+}
+
 - (void)stageViewDidAppear
 {
     [self.progress startAnimation:self];
