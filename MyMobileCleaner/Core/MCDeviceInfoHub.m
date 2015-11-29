@@ -26,6 +26,10 @@
 
 @end
 
+@implementation MCDeviceCrashLogFileInfo
+
+@end
+
 @implementation MCDeviceCrashLogItem
 
 @end

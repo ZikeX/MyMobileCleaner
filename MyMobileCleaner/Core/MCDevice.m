@@ -417,8 +417,9 @@
 
     if (SDM_MD_CallSuccessful(sdm_return)) {
         NSDictionary *info = (__bridge_transfer NSDictionary *)(SDMMD_AFCOperationGetPacketResponse(operation_get_info));
+        NSUInteger size = [(NSString *)(info[@kAFC_File_Info_st_size]) integerValue];
 
-        searchedItem.totalSize += [(NSString *)(info[@kAFC_File_Info_st_size]) integerValue];
+        searchedItem.totalSize += size;
 
         BOOL isDir = [info[@kAFC_File_Info_st_ifmt] isEqualToString:@"S_IFDIR"];
         if (isDir) {
@@ -440,7 +441,10 @@
             }
 
         } else {
-            [searchedItem.allFiles addObject:path];
+            MCDeviceCrashLogFileInfo *fileInfo = [[MCDeviceCrashLogFileInfo alloc] init];
+            fileInfo.filePath = path;
+            fileInfo.fileSize = size;
+            [searchedItem.allFiles addObject:fileInfo];
         }
     }
 

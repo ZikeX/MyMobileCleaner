@@ -26,6 +26,7 @@ static NSUInteger const kMaxNumberOfRowsInPopoverTableView = 7;
 @property (weak) IBOutlet NSLayoutConstraint *constraintTableViewHeight;
 
 @property (nonatomic, strong) NSMutableArray *allFilesName;
+@property (nonatomic, strong) NSMutableArray *allFilesNameForShow;
 
 @end
 
@@ -64,9 +65,17 @@ static NSUInteger const kMaxNumberOfRowsInPopoverTableView = 7;
         totalSize += [item.totalSize unsignedIntegerValue];
         [allFiles addObjectsFromArray:item.allFiles];
     }
+
     self.allFilesName = [NSMutableArray array];
-    for (NSString *path in allFiles) {
-        [self.allFilesName addObject:path.lastPathComponent];
+    self.allFilesNameForShow = [NSMutableArray array];
+    NSUInteger totalSizeForShow = 0;
+    for (MCDeviceCrashLogFileInfo *fileInfo in allFiles) {
+        [self.allFilesName addObject:fileInfo.filePath];
+
+        if (![self shouldFilterLogPath:fileInfo.filePath]) {
+            totalSizeForShow += fileInfo.fileSize;
+            [self.allFilesNameForShow addObject:fileInfo.filePath.lastPathComponent];
+        }
     }
 
     NSByteCountFormatter *formatter = [[NSByteCountFormatter alloc] init];
@@ -77,11 +86,22 @@ static NSUInteger const kMaxNumberOfRowsInPopoverTableView = 7;
     DDLogDebug(@"100%% => all scanned crash log: %@", [formatter stringFromByteCount:totalSize]);
     DDLogDebug(@"100%% => all scanned crash log: %@", self.allFilesName);
 
-    self.labelSize.stringValue = [NSString stringWithFormat:((self.allFilesName.count > 1) ? NSLocalizedStringFromTable(@"scan.done.crash.log.info.many", @"MyMobileCleaner", @"scan.done") : NSLocalizedStringFromTable(@"scan.done.crash.log.info.single", @"MyMobileCleaner", @"scan.done")),
-                                  @(self.allFilesName.count),
-                                  [formatter stringFromByteCount:totalSize]];
+    self.labelSize.stringValue = [NSString stringWithFormat:((self.allFilesNameForShow.count > 1) ? NSLocalizedStringFromTable(@"scan.done.crash.log.info.many", @"MyMobileCleaner", @"scan.done") : NSLocalizedStringFromTable(@"scan.done.crash.log.info.single", @"MyMobileCleaner", @"scan.done")),
+                                  @(self.allFilesNameForShow.count),
+                                  [formatter stringFromByteCount:totalSizeForShow]];
 
-    self.btnInfo.hidden = !(self.allFilesName.count > 0);
+    self.btnInfo.hidden = !(self.allFilesNameForShow.count > 0);
+}
+
+- (BOOL)shouldFilterLogPath:(NSString *)path
+{
+    BOOL should = NO;
+
+    if ([path hasPrefix:@"WiFi/WiFiManager/"]) {
+        should = YES;
+    }
+
+    return should;
 }
 
 - (void)resetHeightForTableView
@@ -114,7 +134,7 @@ static NSUInteger const kMaxNumberOfRowsInPopoverTableView = 7;
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
 {
-    return self.allFilesName.count;
+    return self.allFilesNameForShow.count;
 }
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
@@ -123,7 +143,7 @@ static NSUInteger const kMaxNumberOfRowsInPopoverTableView = 7;
     [NSFont setupSystemFontForNSControl:cellView.name
                                withSize:14.0
                                  weight:kSetupFontWeightLight];
-    cellView.name.stringValue = self.allFilesName[row];
+    cellView.name.stringValue = self.allFilesNameForShow[row];
 
     return cellView;
 }

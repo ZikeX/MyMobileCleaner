@@ -17,18 +17,25 @@
 
 @end
 
+@interface MCDeviceCrashLogFileInfo : NSObject // a single file
+
+@property (nonatomic, assign) NSUInteger fileSize;
+@property (nonatomic, strong) NSString *filePath;
+
+@end
+
 @interface MCDeviceCrashLogItem : NSObject // direct descendant in device's Crash Log dir.
 
 @property (nonatomic, strong) NSString *path;
 @property (nonatomic, assign) BOOL isDir;
 @property (nonatomic, strong) NSNumber *totalSize;
-@property (nonatomic, strong) NSArray *allFiles; // of NSString
+@property (nonatomic, strong) NSArray *allFiles; // of MCDeviceCrashLogFileInfo
 
 @end
 
 @interface MCDeviceCrashLogSearchedItem : NSObject // just used in search
 
 @property (nonatomic, assign) NSUInteger totalSize; // all dir size + all file size
-@property (nonatomic, strong) NSMutableArray *allFiles; // of NSString
+@property (nonatomic, strong) NSMutableArray *allFiles; // of MCDeviceCrashLogFileInfo
 
 @end
