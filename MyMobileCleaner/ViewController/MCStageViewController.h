@@ -39,4 +39,6 @@ typedef NS_ENUM(NSUInteger, MCStageViewControllerUIStage) {
 
 - (void)stageViewDidAppear;
 
+- (void)respondToTakeActionCmd;
+
 @end

@@ -14,6 +14,10 @@
 
 @property (nonatomic, strong) NSArray *myCrashLogs;
 
+@property (nonatomic, strong) NSString *infoForCurrentStage;
+@property (nonatomic, assign) BOOL canTakeAction;
+- (void)takeAction;
+
 - (void)goToWork;
 
 @end

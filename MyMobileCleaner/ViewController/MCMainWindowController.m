@@ -53,6 +53,11 @@
     [[MCDeviceController sharedInstance] monitorWithListener:self];
 }
 
+- (void)takeAction
+{
+    [self.currentUIStageViewController respondToTakeActionCmd];
+}
+
 - (void)windowDidLoad {
     [super windowDidLoad];
 
@@ -110,43 +115,65 @@
                 self.stageNoConnectionViewController = [[MCStageNoConnectionViewController alloc] initWithManager:self];
             }
             self.currentUIStageViewController = self.stageNoConnectionViewController;
+            self.infoForCurrentStage = NSLocalizedStringFromTable(@"info.stage.no.connection", @"MyMobileCleaner", @"stage");
+            self.canTakeAction = NO;
             break;
+            
         case kMCStageViewControllerUIStageConnectedButUnPaired:
             if (!self.stageConnectedButUnPairedViewController) {
                 self.stageConnectedButUnPairedViewController = [[MCStageConnectedButUnPairedViewController alloc] initWithManager:self];
             }
             self.currentUIStageViewController = self.stageConnectedButUnPairedViewController;
+            self.infoForCurrentStage = NSLocalizedStringFromTable(@"info.stage.device.unpaired", @"MyMobileCleaner", @"stage");
+            self.canTakeAction = NO;
             break;
+            
         case kMCStageViewControllerUIStageConnectedAndPaired:
             if (!self.stageConnectedAndPairedViewController) {
                 self.stageConnectedAndPairedViewController = [[MCStageConnectedAndPairedViewController alloc] initWithManager:self];
             }
             self.currentUIStageViewController = self.stageConnectedAndPairedViewController;
+            self.infoForCurrentStage = NSLocalizedStringFromTable(@"info.stage.scan", @"MyMobileCleaner", @"stage");
+            self.canTakeAction = YES;
             break;
+            
         case kMCStageViewControllerUIStageScanning:
             if (!self.stageScanningViewController) {
                 self.stageScanningViewController = [[MCStageScanningViewController alloc] initWithManager:self];
             }
             self.currentUIStageViewController = self.stageScanningViewController;
+            self.infoForCurrentStage = NSLocalizedStringFromTable(@"info.stage.scanning", @"MyMobileCleaner", @"stage");
+            self.canTakeAction = NO;
             break;
+            
         case kMCStageViewControllerUIStageScanDone:
             if (!self.stageScanDoneViewController) {
                 self.stageScanDoneViewController = [[MCStageScanDoneViewController alloc] initWithManager:self];
             }
             self.currentUIStageViewController = self.stageScanDoneViewController;
+            self.currentUIStageViewController = self.stageConnectedAndPairedViewController;
+            self.infoForCurrentStage = NSLocalizedStringFromTable(@"info.stage.clean", @"MyMobileCleaner", @"stage");
+            self.canTakeAction = YES;
             break;
+            
         case kMCStageViewControllerUIStageCleaning:
             if (!self.stageCleaningViewController) {
                 self.stageCleaningViewController = [[MCStageCleaningViewController alloc] initWithManager:self];
             }
             self.currentUIStageViewController = self.stageCleaningViewController;
+            self.infoForCurrentStage = NSLocalizedStringFromTable(@"info.stage.cleaning", @"MyMobileCleaner", @"stage");
+            self.canTakeAction = NO;
             break;
+            
         case kMCStageViewControllerUIStageCleanDone:
             if (!self.stageCleanDoneViewController) {
                 self.stageCleanDoneViewController = [[MCStageCleanDoneViewController alloc] initWithManager:self];
             }
             self.currentUIStageViewController = self.stageCleanDoneViewController;
+            self.infoForCurrentStage = NSLocalizedStringFromTable(@"info.stage.done", @"MyMobileCleaner", @"stage");
+            self.canTakeAction = YES;
             break;
+            
         default:
             break;
     }

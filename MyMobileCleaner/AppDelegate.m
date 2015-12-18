@@ -13,6 +13,7 @@
 @interface AppDelegate ()
 
 @property (nonatomic, strong) MCMainWindowController *mainWindowController;
+@property (weak) IBOutlet NSMenuItem *takeActionMenuItem;
 
 @end
 
@@ -39,6 +40,25 @@
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
+}
+
+- (IBAction)takeAction:(id)sender {
+    [self.mainWindowController takeAction];
+}
+
+- (IBAction)goToHelp:(id)sender {
+    NSURL *url = [NSURL URLWithString:@"http://hi.zongquan.wang"];
+    [[NSWorkspace sharedWorkspace] openURL:url];
+}
+
+- (BOOL)validateMenuItem:(NSMenuItem *)item
+{
+    if (item == self.takeActionMenuItem) {
+        self.takeActionMenuItem.title = self.mainWindowController.infoForCurrentStage;
+        return self.mainWindowController.canTakeAction;
+    } else {
+        return item.enabled;
+    }
 }
 
 @end

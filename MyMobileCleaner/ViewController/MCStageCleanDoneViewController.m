@@ -31,6 +31,11 @@
     DDLogDebug(@"100%% => success to clean all scanned crash log");
 }
 
+- (void)respondToTakeActionCmd
+{
+    [self clickBtnDone:self.btnDone];
+}
+
 - (IBAction)clickBtnDone:(id)sender {
     [self.view.window close];
 }

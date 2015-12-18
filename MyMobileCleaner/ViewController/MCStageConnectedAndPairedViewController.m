@@ -122,6 +122,11 @@
                              completion:nil];
 }
 
+- (void)respondToTakeActionCmd
+{
+    [self clickBtnScan:self.btnScan];
+}
+
 - (IBAction)clickBtnScan:(id)sender {
     [self.manager gotoNextStage];
 }

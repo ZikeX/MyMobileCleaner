@@ -93,6 +93,11 @@ static NSUInteger const kMaxNumberOfRowsInPopoverTableView = 7;
     self.btnInfo.hidden = !(self.allFilesNameForShow.count > 0);
 }
 
+- (void)respondToTakeActionCmd
+{
+    [self clickBtnClean:self.btnClean];
+}
+
 - (BOOL)shouldFilterLogPath:(NSString *)path
 {
     BOOL should = NO;
