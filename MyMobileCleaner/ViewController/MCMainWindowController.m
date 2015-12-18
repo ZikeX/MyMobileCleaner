@@ -151,7 +151,6 @@
                 self.stageScanDoneViewController = [[MCStageScanDoneViewController alloc] initWithManager:self];
             }
             self.currentUIStageViewController = self.stageScanDoneViewController;
-            self.currentUIStageViewController = self.stageConnectedAndPairedViewController;
             self.infoForCurrentStage = NSLocalizedStringFromTable(@"info.stage.clean", @"MyMobileCleaner", @"stage");
             self.canTakeAction = YES;
             break;
