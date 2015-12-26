@@ -113,6 +113,7 @@
 		84F03AC21B82DABF00FFFA28 /* MCDeviceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCDeviceController.m; path = Core/MCDeviceController.m; sourceTree = "<group>"; };
 		84F03AC51B83204600FFFA28 /* MCDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCDevice.h; path = Core/MCDevice.h; sourceTree = "<group>"; };
 		84F03AC61B83204600FFFA28 /* MCDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCDevice.m; path = Core/MCDevice.m; sourceTree = "<group>"; };
+		E50910B11C2E358F0026F3C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		E57015031B91889500422D7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E57015051B91889600422D7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E57015071B919C4400422D7F /* bubbles.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bubbles.mp3; sourceTree = "<group>"; };
@@ -478,6 +479,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				84F03AA31B82D79200FFFA28 /* Base */,
+				E50910B11C2E358F0026F3C6 /* en */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
