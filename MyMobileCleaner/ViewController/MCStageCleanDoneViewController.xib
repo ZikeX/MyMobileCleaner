@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MCStageCleanDoneViewController">
@@ -18,7 +18,6 @@
             <subviews>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="PVQ-O6-Lxh" customClass="MCColorBackgroundView">
                     <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
-                    <animations/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="cbvBackgroundColor">
                             <color key="value" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="0.075390625000000003" colorSpace="calibratedRGB"/>
@@ -39,7 +38,6 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="360" id="9uk-yU-703"/>
                     </constraints>
-                    <animations/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Clean Successfully" id="rrQ-cN-wcg">
                         <font key="font" metaFont="system" size="20"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -52,7 +50,6 @@
                         <constraint firstAttribute="height" constant="128" id="dAk-84-l3B"/>
                         <constraint firstAttribute="width" constant="128" id="qXo-XK-M8c"/>
                     </constraints>
-                    <animations/>
                     <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="like" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="zna-cX-DUc" userLabel="done">
                         <behavior key="behavior" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
@@ -61,21 +58,33 @@
                         <action selector="clickBtnDone:" target="-2" id="ZG8-Ns-uTq"/>
                     </connections>
                 </button>
+                <button toolTip="Go Back :)" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8bN-ka-SCp" userLabel="back">
+                    <rect key="frame" x="20" y="20" width="32" height="32"/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="back" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="sI4-ec-qO6">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="clickBtnBack:" target="-2" id="Gv8-E3-rml"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstAttribute="centerY" secondItem="ihZ-RW-qO8" secondAttribute="centerY" constant="-44" id="CqQ-zF-dHt"/>
                 <constraint firstItem="PVQ-O6-Lxh" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="Gyu-hy-21s"/>
                 <constraint firstItem="PVQ-O6-Lxh" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="JPy-vk-NgC"/>
+                <constraint firstAttribute="bottom" secondItem="8bN-ka-SCp" secondAttribute="bottom" constant="20" symbolic="YES" id="KhE-Al-Uvi"/>
                 <constraint firstAttribute="centerX" secondItem="ihZ-RW-qO8" secondAttribute="centerX" id="N8Q-on-DZl"/>
                 <constraint firstAttribute="centerX" secondItem="g9t-KP-YQC" secondAttribute="centerX" id="R7L-Sk-zmX"/>
                 <constraint firstAttribute="trailing" secondItem="PVQ-O6-Lxh" secondAttribute="trailing" id="fp8-0J-nld"/>
                 <constraint firstItem="ihZ-RW-qO8" firstAttribute="top" secondItem="g9t-KP-YQC" secondAttribute="bottom" constant="28" id="oyZ-Wt-WUx"/>
                 <constraint firstAttribute="bottom" secondItem="PVQ-O6-Lxh" secondAttribute="bottom" id="uVZ-X7-lh8"/>
+                <constraint firstItem="8bN-ka-SCp" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="yfc-Zh-V7I"/>
             </constraints>
-            <animations/>
         </customView>
     </objects>
     <resources>
+        <image name="back" width="32" height="32"/>
         <image name="like" width="128" height="128"/>
     </resources>
 </document>

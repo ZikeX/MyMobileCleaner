@@ -40,4 +40,8 @@
     [self.view.window close];
 }
 
+- (IBAction)clickBtnBack:(id)sender {
+    [self.manager gotoNextStage];
+}
+
 @end
