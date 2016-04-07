@@ -47,6 +47,12 @@
 		E5E9E84A1B8CB49700FF39C4 /* MCFlashRingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E9E8491B8CB49700FF39C4 /* MCFlashRingView.m */; };
 		E5E9E84D1B8CC5B800FF39C4 /* MCStageScanDonePopoverCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E9E84C1B8CC5B800FF39C4 /* MCStageScanDonePopoverCellView.m */; };
 		E5EAA0561C0AD1D800CF832C /* NSFont+SetupFont.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EAA0551C0AD1D800CF832C /* NSFont+SetupFont.m */; };
+		E5F444B81CB68C0500AA368F /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E5F444B61CB68B4D00AA368F /* libc++.tbd */; };
+		E5F444BA1CB68C0D00AA368F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E5F444B91CB68C0D00AA368F /* libz.tbd */; };
+		E5F444BF1CB68F6B00AA368F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5F444BB1CB68DC400AA368F /* Crashlytics.framework */; };
+		E5F444C01CB68F6B00AA368F /* Crashlytics.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E5F444BB1CB68DC400AA368F /* Crashlytics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E5F444C11CB68F6B00AA368F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5F444BC1CB68DC400AA368F /* Fabric.framework */; };
+		E5F444C21CB68F6B00AA368F /* Fabric.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E5F444BC1CB68DC400AA368F /* Fabric.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,7 +62,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				E5F444C01CB68F6B00AA368F /* Crashlytics.framework in Copy Frameworks */,
 				84F03ABE1B82D98D00FFFA28 /* SDMMobileDevice.framework in Copy Frameworks */,
+				E5F444C21CB68F6B00AA368F /* Fabric.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +141,10 @@
 		E5E9E84C1B8CC5B800FF39C4 /* MCStageScanDonePopoverCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCStageScanDonePopoverCellView.m; path = View/MCStageScanDonePopoverCellView.m; sourceTree = "<group>"; };
 		E5EAA0541C0AD1D800CF832C /* NSFont+SetupFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFont+SetupFont.h"; sourceTree = "<group>"; };
 		E5EAA0551C0AD1D800CF832C /* NSFont+SetupFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFont+SetupFont.m"; sourceTree = "<group>"; };
+		E5F444B61CB68B4D00AA368F /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		E5F444B91CB68C0D00AA368F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E5F444BB1CB68DC400AA368F /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		E5F444BC1CB68DC400AA368F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,8 +152,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5F444BA1CB68C0D00AA368F /* libz.tbd in Frameworks */,
+				E5F444B81CB68C0500AA368F /* libc++.tbd in Frameworks */,
 				84F03ABF1B82D9F400FFFA28 /* SDMMobileDevice.framework in Frameworks */,
 				DDD6786DDD190A1ECE06F322 /* libPods.a in Frameworks */,
+				E5F444BF1CB68F6B00AA368F /* Crashlytics.framework in Frameworks */,
+				E5F444C11CB68F6B00AA368F /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +285,8 @@
 		84F03ABA1B82D85200FFFA28 /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				E5F444BB1CB68DC400AA368F /* Crashlytics.framework */,
+				E5F444BC1CB68DC400AA368F /* Fabric.framework */,
 				84F03ABB1B82D85200FFFA28 /* SDMMobileDevice.framework */,
 			);
 			path = 3rd;
@@ -303,6 +321,8 @@
 		E7CF8EF5A00D9F53E7845844 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E5F444B91CB68C0D00AA368F /* libz.tbd */,
+				E5F444B61CB68B4D00AA368F /* libc++.tbd */,
 				4D070B01B2877C4C6891CA2E /* libPods.a */,
 			);
 			name = Frameworks;
@@ -322,6 +342,7 @@
 				84F03ABD1B82D98400FFFA28 /* Copy Frameworks */,
 				3AF17EFDD9FEC66FB203D4F0 /* Copy Pods Resources */,
 				F905DC070B2CB9531C97EB37 /* Embed Pods Frameworks */,
+				E5F4449B1CB6896400AA368F /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -423,6 +444,20 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		E5F4449B1CB6896400AA368F /* Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Fabric;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./3rd/Fabric.framework/run 792f29af6ad87a2061f58e027213ddc33d3271c4 455dd2f3874edc728dd4154f28902bb0ccc86c6833e923373c1c086d607bfd25";
 		};
 		F905DC070B2CB9531C97EB37 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -596,9 +631,11 @@
 				CODE_SIGN_ENTITLEMENTS = MyMobileCleaner/MyMobileCleaner.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application: ZongQuan Wang (VWE2C42C86)";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/3rd",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MyMobileCleaner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(CONFIGURATION_BUILD_DIR)";
@@ -621,6 +658,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/3rd",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MyMobileCleaner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(CONFIGURATION_BUILD_DIR)";

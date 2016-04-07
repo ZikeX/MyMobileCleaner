@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "MCMainWindowController.h"
 #import "LogFormatter.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 @interface AppDelegate ()
 
@@ -59,6 +61,14 @@
     } else {
         return item.enabled;
     }
+}
+
+- (void)setupFabric
+{
+    // https://docs.fabric.io/osx/crashlytics/crashlytics.html
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"NSApplicationCrashOnExceptions": @YES }];
+
+    [Fabric with:@[[Crashlytics class]]];
 }
 
 @end
