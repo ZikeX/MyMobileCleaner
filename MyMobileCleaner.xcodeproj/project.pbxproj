@@ -50,9 +50,7 @@
 		E5F444B81CB68C0500AA368F /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E5F444B61CB68B4D00AA368F /* libc++.tbd */; };
 		E5F444BA1CB68C0D00AA368F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E5F444B91CB68C0D00AA368F /* libz.tbd */; };
 		E5F444BF1CB68F6B00AA368F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5F444BB1CB68DC400AA368F /* Crashlytics.framework */; };
-		E5F444C01CB68F6B00AA368F /* Crashlytics.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E5F444BB1CB68DC400AA368F /* Crashlytics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E5F444C11CB68F6B00AA368F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5F444BC1CB68DC400AA368F /* Fabric.framework */; };
-		E5F444C21CB68F6B00AA368F /* Fabric.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = E5F444BC1CB68DC400AA368F /* Fabric.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -62,9 +60,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E5F444C01CB68F6B00AA368F /* Crashlytics.framework in Copy Frameworks */,
 				84F03ABE1B82D98D00FFFA28 /* SDMMobileDevice.framework in Copy Frameworks */,
-				E5F444C21CB68F6B00AA368F /* Fabric.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
