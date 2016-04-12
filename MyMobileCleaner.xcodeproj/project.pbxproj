@@ -453,7 +453,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./3rd/Fabric.framework/run 792f29af6ad87a2061f58e027213ddc33d3271c4 455dd2f3874edc728dd4154f28902bb0ccc86c6833e923373c1c086d607bfd25";
+			shellScript = "uploadConfiguration=\"Release\"\n\nif [ \"$uploadConfigration\" = \"${CONFIGURATION}\" ]; then\n./3rd/Fabric.framework/run 792f29af6ad87a2061f58e027213ddc33d3271c4 455dd2f3874edc728dd4154f28902bb0ccc86c6833e923373c1c086d607bfd25\nfi\n";
 		};
 		F905DC070B2CB9531C97EB37 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
