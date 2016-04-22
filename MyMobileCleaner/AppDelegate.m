@@ -24,6 +24,8 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
 
+    [self setupFabric];
+
     [LogFormatter setupLog];
 
     self.mainWindowController = [[MCMainWindowController alloc] init];
