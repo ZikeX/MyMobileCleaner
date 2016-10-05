@@ -302,9 +302,6 @@
     [[MCDeviceController sharedInstance].selectedConnectedDevice waitingForPairWithCompleteBlock:^{
         [self deviceDidConnectAndPaired];
     }];
-
-    // try to pair: not work, no idea. let user do it by himself.
-//    [[MCDeviceController sharedInstance].selectedConnectedDevice toPairDevice];
 }
 
 - (void)deviceDidConnectAndPaired

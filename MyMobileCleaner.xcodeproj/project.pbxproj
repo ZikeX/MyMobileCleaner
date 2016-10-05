@@ -32,8 +32,6 @@
 		84F03A9F1B82D79200FFFA28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F03A9E1B82D79200FFFA28 /* main.m */; };
 		84F03AA11B82D79200FFFA28 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F03AA01B82D79200FFFA28 /* Images.xcassets */; };
 		84F03AA41B82D79200FFFA28 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F03AA21B82D79200FFFA28 /* MainMenu.xib */; };
-		84F03ABE1B82D98D00FFFA28 /* SDMMobileDevice.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 84F03ABB1B82D85200FFFA28 /* SDMMobileDevice.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		84F03ABF1B82D9F400FFFA28 /* SDMMobileDevice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F03ABB1B82D85200FFFA28 /* SDMMobileDevice.framework */; };
 		84F03AC31B82DABF00FFFA28 /* MCDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F03AC21B82DABF00FFFA28 /* MCDeviceController.m */; };
 		84F03AC71B83204600FFFA28 /* MCDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F03AC61B83204600FFFA28 /* MCDevice.m */; };
 		DDD6786DDD190A1ECE06F322 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D070B01B2877C4C6891CA2E /* libPods.a */; };
@@ -51,21 +49,9 @@
 		E5F444BA1CB68C0D00AA368F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E5F444B91CB68C0D00AA368F /* libz.tbd */; };
 		E5F444BF1CB68F6B00AA368F /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5F444BB1CB68DC400AA368F /* Crashlytics.framework */; };
 		E5F444C11CB68F6B00AA368F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5F444BC1CB68DC400AA368F /* Fabric.framework */; };
+		E5FD3E821DA490B900B14E4A /* MobileDeviceAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FD3E811DA490B900B14E4A /* MobileDeviceAccess.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E5FD3E841DA4B3F800B14E4A /* MobileDevice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5FD3E831DA4B3F800B14E4A /* MobileDevice.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		84F03ABD1B82D98400FFFA28 /* Copy Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				84F03ABE1B82D98D00FFFA28 /* SDMMobileDevice.framework in Copy Frameworks */,
-			);
-			name = "Copy Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		10670E41C395202C9BC8CFD2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,7 +98,6 @@
 		84F03A9E1B82D79200FFFA28 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84F03AA01B82D79200FFFA28 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		84F03AA31B82D79200FFFA28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		84F03ABB1B82D85200FFFA28 /* SDMMobileDevice.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDMMobileDevice.framework; sourceTree = "<group>"; };
 		84F03AC11B82DABF00FFFA28 /* MCDeviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCDeviceController.h; path = Core/MCDeviceController.h; sourceTree = "<group>"; };
 		84F03AC21B82DABF00FFFA28 /* MCDeviceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCDeviceController.m; path = Core/MCDeviceController.m; sourceTree = "<group>"; };
 		84F03AC51B83204600FFFA28 /* MCDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCDevice.h; path = Core/MCDevice.h; sourceTree = "<group>"; };
@@ -126,7 +111,6 @@
 		E57FAD6D1B84B33100ABF2D0 /* MCDeviceInfoHub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCDeviceInfoHub.m; path = Core/MCDeviceInfoHub.m; sourceTree = "<group>"; };
 		E5B240311B89CB4400A2BC03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/MyMobileCleaner.strings; sourceTree = "<group>"; };
 		E5B240331B89CB4500A2BC03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MyMobileCleaner.strings; sourceTree = "<group>"; };
-		E5B240341B89CF0800A2BC03 /* MyMobileCleaner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MyMobileCleaner.entitlements; sourceTree = "<group>"; };
 		E5C578DD1B916FC80035AE03 /* LogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogFormatter.h; sourceTree = "<group>"; };
 		E5C578DE1B916FC80035AE03 /* LogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogFormatter.m; sourceTree = "<group>"; };
 		E5CB5F471B9813A8008FEA0C /* MCConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCConfig.h; sourceTree = "<group>"; };
@@ -141,6 +125,10 @@
 		E5F444B91CB68C0D00AA368F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		E5F444BB1CB68DC400AA368F /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		E5F444BC1CB68DC400AA368F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		E5FD3E801DA490B900B14E4A /* MobileDeviceAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileDeviceAccess.h; sourceTree = "<group>"; };
+		E5FD3E811DA490B900B14E4A /* MobileDeviceAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobileDeviceAccess.m; sourceTree = "<group>"; };
+		E5FD3E831DA4B3F800B14E4A /* MobileDevice.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileDevice.framework; path = ../../../../System/Library/PrivateFrameworks/MobileDevice.framework; sourceTree = "<group>"; };
+		E5FD3E851DA4B76000B14E4A /* MobileDeviceAccessHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileDeviceAccessHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,9 +136,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5FD3E841DA4B3F800B14E4A /* MobileDevice.framework in Frameworks */,
 				E5F444BA1CB68C0D00AA368F /* libz.tbd in Frameworks */,
 				E5F444B81CB68C0500AA368F /* libc++.tbd in Frameworks */,
-				84F03ABF1B82D9F400FFFA28 /* SDMMobileDevice.framework in Frameworks */,
 				DDD6786DDD190A1ECE06F322 /* libPods.a in Frameworks */,
 				E5F444BF1CB68F6B00AA368F /* Crashlytics.framework in Frameworks */,
 				E5F444C11CB68F6B00AA368F /* Fabric.framework in Frameworks */,
@@ -251,7 +239,6 @@
 		84F03A981B82D79200FFFA28 /* MyMobileCleaner */ = {
 			isa = PBXGroup;
 			children = (
-				E5B240341B89CF0800A2BC03 /* MyMobileCleaner.entitlements */,
 				84F03A9B1B82D79200FFFA28 /* AppDelegate.h */,
 				84F03A9C1B82D79200FFFA28 /* AppDelegate.m */,
 				E5EAA0571C0AE07900CF832C /* Common */,
@@ -281,9 +268,9 @@
 		84F03ABA1B82D85200FFFA28 /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				E5FD3E7F1DA490B900B14E4A /* MobileDeviceAccess */,
 				E5F444BB1CB68DC400AA368F /* Crashlytics.framework */,
 				E5F444BC1CB68DC400AA368F /* Fabric.framework */,
-				84F03ABB1B82D85200FFFA28 /* SDMMobileDevice.framework */,
 			);
 			path = 3rd;
 			sourceTree = "<group>";
@@ -314,9 +301,20 @@
 			name = Common;
 			sourceTree = "<group>";
 		};
+		E5FD3E7F1DA490B900B14E4A /* MobileDeviceAccess */ = {
+			isa = PBXGroup;
+			children = (
+				E5FD3E851DA4B76000B14E4A /* MobileDeviceAccessHeader.h */,
+				E5FD3E801DA490B900B14E4A /* MobileDeviceAccess.h */,
+				E5FD3E811DA490B900B14E4A /* MobileDeviceAccess.m */,
+			);
+			path = MobileDeviceAccess;
+			sourceTree = "<group>";
+		};
 		E7CF8EF5A00D9F53E7845844 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E5FD3E831DA4B3F800B14E4A /* MobileDevice.framework */,
 				E5F444B91CB68C0D00AA368F /* libz.tbd */,
 				E5F444B61CB68B4D00AA368F /* libc++.tbd */,
 				4D070B01B2877C4C6891CA2E /* libPods.a */,
@@ -335,7 +333,6 @@
 				84F03A921B82D79200FFFA28 /* Sources */,
 				84F03A931B82D79200FFFA28 /* Frameworks */,
 				84F03A941B82D79200FFFA28 /* Resources */,
-				84F03ABD1B82D98400FFFA28 /* Copy Frameworks */,
 				3AF17EFDD9FEC66FB203D4F0 /* Copy Pods Resources */,
 				F905DC070B2CB9531C97EB37 /* Embed Pods Frameworks */,
 				E5F4449B1CB6896400AA368F /* Fabric */,
@@ -362,7 +359,7 @@
 						CreatedOnToolsVersion = 6.4;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -478,6 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5E9E84D1B8CC5B800FF39C4 /* MCStageScanDonePopoverCellView.m in Sources */,
+				E5FD3E821DA490B900B14E4A /* MobileDeviceAccess.m in Sources */,
 				E5E9E84A1B8CB49700FF39C4 /* MCFlashRingView.m in Sources */,
 				84BEE1691B85CD48000F3DC1 /* MCStageViewController.m in Sources */,
 				E5EAA0561C0AD1D800CF832C /* NSFont+SetupFont.m in Sources */,
@@ -624,7 +622,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = MyMobileCleaner/MyMobileCleaner.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application: ZongQuan Wang (VWE2C42C86)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -632,13 +629,14 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/3rd",
 					"$(PROJECT_DIR)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
 				INFOPLIST_FILE = MyMobileCleaner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(CONFIGURATION_BUILD_DIR)";
 				OTHER_CODE_SIGN_FLAGS = "--timestamp=none";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gokustudio.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/3rd/SDMMobileDevice.framework/Headers";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -648,20 +646,20 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = MyMobileCleaner/MyMobileCleaner.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: ZongQuan Wang (VWE2C42C86)";
+				CODE_SIGN_IDENTITY = "Developer ID Application: ZongQuan Wang (VWE2C42C86)";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/3rd",
 					"$(PROJECT_DIR)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
 				INFOPLIST_FILE = MyMobileCleaner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(CONFIGURATION_BUILD_DIR)";
 				OTHER_CODE_SIGN_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gokustudio.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/3rd/SDMMobileDevice.framework/Headers";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

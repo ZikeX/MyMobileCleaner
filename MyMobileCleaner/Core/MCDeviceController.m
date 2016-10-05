@@ -9,7 +9,7 @@
 #import "MCDeviceController.h"
 #import "LogFormatter.h"
 
-@interface MCDeviceController ()
+@interface MCDeviceController () <MobileDeviceAccessListener>
 
 @property (atomic, assign) BOOL isRunning;
 @property (nonatomic, strong) NSOperationQueue *workQueue;
@@ -49,6 +49,7 @@
         return;
     }
 
+    [[MobileDeviceAccess singleton] setListener:self];
     self.listener = listener;
 
     self.isRunning = YES;
@@ -56,22 +57,12 @@
     self.workQueue = [[NSOperationQueue alloc] init];
     self.workQueue.maxConcurrentOperationCount = 1;
 
-    SDMMobileDevice;
-
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(notifyConnect:)
-                                                 name:(__bridge NSString *)kSDMMD_USBMuxListenerDeviceAttachedNotificationFinished
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(notifyDisconnect:)
-                                                 name:(__bridge NSString *)kSDMMD_USBMuxListenerDeviceDetachedNotificationFinished
-                                               object:nil];
-
     DDLogInfo(@"device controller starts running");
 }
 
 - (void)stopMonitor
 {
+    [[MobileDeviceAccess singleton] setListener:nil];
     self.listener = nil;
 
     self.isRunning = NO;
@@ -83,19 +74,12 @@
     self.selectedConnectedDevice = nil;
     self.selectedConnectedDeviceUDID = nil;
 
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:(__bridge NSString *)kSDMMD_USBMuxListenerDeviceAttachedNotificationFinished
-                                                  object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:(__bridge NSString *)kSDMMD_USBMuxListenerDeviceDetachedNotificationFinished
-                                                  object:nil];
-
     DDLogInfo(@"device controller stops running");
 }
 
-#pragma mark - notification
+#pragma mark - MobileDeviceAccessListener
 
-- (void)notifyConnect:(NSNotification *)note
+- (void)deviceConnected:(AMDevice*)device
 {
     if (!self.isRunning) {
         return;
@@ -103,9 +87,9 @@
 
     [self.workQueue addOperationWithBlock:^{
         if (!self.selectedConnectedDevice) {
-            self.allConnectedDevices = (__bridge_transfer NSArray *)(SDMMD_AMDCreateDeviceList());
+            self.allConnectedDevices = [[MobileDeviceAccess singleton] devices];
 
-            self.selectedConnectedDevice = [[MCDevice alloc] initWithRawDevice:(__bridge SDMMD_AMDeviceRef)(self.allConnectedDevices.firstObject)];
+            self.selectedConnectedDevice = [[MCDevice alloc] initWithRawDevice:self.allConnectedDevices.firstObject];
             self.selectedConnectedDeviceUDID = self.selectedConnectedDevice.udid;
 
             DDLogInfo(@"connect to a new device: {UDID: %@}", self.selectedConnectedDeviceUDID);
@@ -123,38 +107,13 @@
     }];
 }
 
-- (void)notifyDisconnect:(NSNotification *)note
+- (void)deviceDisconnected:(AMDevice*)device
 {
     if (!self.isRunning) {
         return;
     }
 
     [self.workQueue addOperationWithBlock:^{
-        /*
-        self.allConnectedDevices = (__bridge_transfer NSArray *)(SDMMD_AMDCreateDeviceList());
-
-        BOOL selectedDeviceStillConnected = NO;
-
-        for (id device in self.allConnectedDevices) {
-            SDMMD_AMDeviceRef refDevice = (__bridge SDMMD_AMDeviceRef)device;
-
-            CFStringRef refDeviceUDID = SDMMD_AMDeviceCopyUDID(refDevice);
-            if (refDeviceUDID == NULL) {
-                refDeviceUDID = SDMMD_AMDeviceCopyValue(refDevice, NULL, CFSTR(kUniqueDeviceID));
-            }
-            NSString *deviceUDID = (__bridge_transfer NSString *)refDeviceUDID;
-
-            if ([self.selectedConnectedDeviceUDID isEqualToString:deviceUDID]) {
-                selectedDeviceStillConnected = YES;
-
-                self.selectedConnectedDevice = [[MCDevice alloc] initWithRawDevice:refDevice];
-                self.selectedConnectedDeviceUDID = self.selectedConnectedDevice.udid;
-
-                break;
-            }
-        }
-        */
-
         BOOL selectedDeviceStillConnected = [self.selectedConnectedDevice isConnectedDevice];
 
         if (selectedDeviceStillConnected) {
@@ -165,7 +124,7 @@
 
             self.selectedConnectedDevice = nil;
             self.selectedConnectedDeviceUDID = nil;
-
+            
             [self.listener deviceDidDisconnect];
         }
     }];

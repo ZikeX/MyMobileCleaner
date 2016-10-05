@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SDMMobileDevice.h"
 #import "MCDevice.h"
 
 @protocol MCDeviceControllerDelegate <NSObject>

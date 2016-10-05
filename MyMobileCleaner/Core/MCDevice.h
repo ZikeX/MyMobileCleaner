@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SDMMobileDevice.h"
+#import "MobileDeviceAccessHeader.h"
 #import "MCDeviceInfoHub.h"
 
 @interface MCDevice : NSObject
@@ -18,12 +18,10 @@
 
 + (NSString *)deviceTypeNameForModel:(NSString *)model;
 
-- (instancetype)initWithRawDevice:(SDMMD_AMDeviceRef)rawDevice;
+- (instancetype)initWithRawDevice:(AMDevice *)rawDevice;
 
 - (BOOL)isConnectedDevice;
 - (BOOL)isPairedDevice;
-- (BOOL)toPairDevice;
-- (BOOL)unPairDevice;
 - (void)waitingForPairWithCompleteBlock:(void(^)())completeBlock;
 
 - (MCDeviceDiskUsage *)diskUsage;
@@ -35,8 +33,5 @@
          successBlock:(void(^)())successBlock
           updateBlock:(void(^)(NSUInteger currentItemIndex))updateBlock
          failureBlock:(void(^)())failureBlock;
-
-// not recommend to use this api, unless you know how to parse the returned value.
-- (CFTypeRef)copyDeviceValueOfKey:(NSString *)key inDomain:(NSString *)domain;
 
 @end
