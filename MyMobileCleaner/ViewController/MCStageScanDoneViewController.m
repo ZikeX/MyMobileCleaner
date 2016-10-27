@@ -91,6 +91,8 @@ static NSUInteger const kMaxNumberOfRowsInPopoverTableView = 7;
                                   [formatter stringFromByteCount:totalSizeForShow]];
 
     self.btnInfo.hidden = !(self.allFilesNameForShow.count > 0);
+    
+    [self.infoTableView reloadData];
 }
 
 - (void)respondToTakeActionCmd
@@ -151,6 +153,15 @@ static NSUInteger const kMaxNumberOfRowsInPopoverTableView = 7;
     cellView.name.stringValue = self.allFilesNameForShow[row];
 
     return cellView;
+}
+
+- (BOOL)tableView:(NSTableView *)aTableView shouldSelectRow:(NSInteger)rowIndex
+{
+    if (aTableView == self.infoTableView) {
+        return NO;
+    }
+    
+    return YES;
 }
 
 @end
