@@ -1,18 +1,18 @@
 
-/* Class = "NSMenuItem"; title = "Quit iDevice Cleaner"; ObjectID = "4sb-4s-VLi"; */
-"4sb-4s-VLi.title" = "Quit iDevice Cleaner";
+/* Class = "NSMenuItem"; title = "Quit iDeviceCleaner"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "Quit iDeviceCleaner";
 
-/* Class = "NSMenuItem"; title = "About iDevice Cleaner"; ObjectID = "5kV-Vb-QxS"; */
-"5kV-Vb-QxS.title" = "About iDevice Cleaner";
+/* Class = "NSMenuItem"; title = "About iDeviceCleaner"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "About iDeviceCleaner";
 
 /* Class = "NSMenu"; title = "Action"; ObjectID = "Cex-4g-NbX"; */
 "Cex-4g-NbX.title" = "Action";
 
-/* Class = "NSMenuItem"; title = "iDevice Cleaner Help"; ObjectID = "FKE-Sm-Kum"; */
-"FKE-Sm-Kum.title" = "iDevice Cleaner Help";
+/* Class = "NSMenuItem"; title = "iDeviceCleaner Help"; ObjectID = "FKE-Sm-Kum"; */
+"FKE-Sm-Kum.title" = "iDeviceCleaner Help";
 
-/* Class = "NSMenuItem"; title = "Hide iDevice Cleaner"; ObjectID = "Olw-nP-bQN"; */
-"Olw-nP-bQN.title" = "Hide iDevice Cleaner";
+/* Class = "NSMenuItem"; title = "Hide iDeviceCleaner"; ObjectID = "Olw-nP-bQN"; */
+"Olw-nP-bQN.title" = "Hide iDeviceCleaner";
 
 /* Class = "NSMenuItem"; title = "Action"; ObjectID = "a7J-Ta-CC8"; */
 "a7J-Ta-CC8.title" = "Action";

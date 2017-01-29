@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MCMainWindowController">
@@ -30,14 +30,12 @@
                         <subviews>
                             <customView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0rw-yj-frg" userLabel="cavas">
                                 <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
-                                <animations/>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="LTs-Dv-qEp" userLabel="line" customClass="MCColorBackgroundView">
                                 <rect key="frame" x="16" y="300" width="368" height="4"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="4" id="NJ3-3o-3zY"/>
                                 </constraints>
-                                <animations/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cbvCornerRadius">
                                         <real key="value" value="8"/>
@@ -55,7 +53,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="DbQ-qf-ebP"/>
                                 </constraints>
-                                <animations/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="iWm-HY-bZs">
                                     <font key="font" size="16" name="HelveticaNeue-Light"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -67,7 +64,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="7kS-8W-vPT"/>
                                 </constraints>
-                                <animations/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingMiddle" sendsActionOnEndEditing="YES" alignment="center" id="qKr-uZ-cgh">
                                     <font key="font" metaFont="system" size="20"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -80,7 +76,6 @@
                                     <constraint firstAttribute="height" constant="16" id="BmR-3x-ERz"/>
                                     <constraint firstAttribute="width" constant="16" id="Vdi-C2-4T3"/>
                                 </constraints>
-                                <animations/>
                                 <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="dYv-Io-uW1">
                                     <behavior key="behavior" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -95,7 +90,6 @@
                                     <constraint firstAttribute="width" constant="20" id="7HN-zH-lVs"/>
                                     <constraint firstAttribute="height" constant="40" id="RLt-mB-nlh"/>
                                 </constraints>
-                                <animations/>
                             </customView>
                         </subviews>
                         <constraints>
@@ -115,7 +109,6 @@
                             <constraint firstItem="0rw-yj-frg" firstAttribute="leading" secondItem="zX4-kw-EAA" secondAttribute="leading" id="uOE-Cv-Q08"/>
                             <constraint firstItem="0rw-yj-frg" firstAttribute="top" secondItem="zX4-kw-EAA" secondAttribute="top" id="w4O-qG-Qmb"/>
                         </constraints>
-                        <animations/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <integer key="value" value="6"/>
@@ -129,7 +122,6 @@
                     <constraint firstAttribute="bottom" secondItem="zX4-kw-EAA" secondAttribute="bottom" id="lSX-KF-eCH"/>
                     <constraint firstItem="zX4-kw-EAA" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" id="lsL-cv-wsz"/>
                 </constraints>
-                <animations/>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
