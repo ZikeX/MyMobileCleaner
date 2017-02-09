@@ -1,8 +1,6 @@
 
 ## iPhone &amp; iPad Cleaner ##
 
-*Use SDMMobileDevice.framework instead of Apple's private framework MobileDevice.framework.*
-
 Currently just clean crash log. (Apple has imposed more restrictions, we can not access installed app dir now.)
 As a guy with obsessive-compulsive disorder, I still feel lucky to be able to clean my iPhones' crash log :)
 
