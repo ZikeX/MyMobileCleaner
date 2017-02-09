@@ -1,5 +1,5 @@
 
-## iPhone &amp; iPad Cleaner ##
+## iDeviceCleaner ##
 
 Currently just clean crash log. (Apple has imposed more restrictions, we can not access installed app dir now.)
 As a guy with obsessive-compulsive disorder, I still feel lucky to be able to clean my iPhones' crash log :)
@@ -10,7 +10,7 @@ As a guy with obsessive-compulsive disorder, I still feel lucky to be able to cl
 
 [Do you have or care about the same problem ?](https://v2ex.com/t/188500)
 
-With MyMobileCleaner, now it is not a problem.
+With iDeviceCleaner, now it is not a problem.
 
 ![screenshot](screenshot/screenshot.gif)
 
