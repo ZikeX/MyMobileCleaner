@@ -356,6 +356,12 @@
 + (NSString *)deviceTypeNameForModel:(NSString *)model
 {
     // iPhone
+    if ([model isEqualToString:@"iPhone10,6"])  return @"iPhone X";
+    if ([model isEqualToString:@"iPhone10,3"])  return @"iPhone X";
+    if ([model isEqualToString:@"iPhone10,5"])  return @"iPhone 8 Plus";
+    if ([model isEqualToString:@"iPhone10,2"])  return @"iPhone 8 Plus";
+    if ([model isEqualToString:@"iPhone10,4"])  return @"iPhone 8";
+    if ([model isEqualToString:@"iPhone10,1"])  return @"iPhone 8";
     if ([model isEqualToString:@"iPhone9,4"])   return @"iPhone 7 Plus";
     if ([model isEqualToString:@"iPhone9,2"])   return @"iPhone 7 Plus";
     if ([model isEqualToString:@"iPhone9,3"])   return @"iPhone 7";
@@ -380,6 +386,10 @@
     if ([model isEqualToString:@"iPhone1,1"])   return @"iPhone";
 
     // Apple Watch
+    if ([model isEqualToString:@"Watch3,4"])    return @"Apple Watch Series 3";
+    if ([model isEqualToString:@"Watch3,3"])    return @"Apple Watch Series 3";
+    if ([model isEqualToString:@"Watch3,2"])    return @"Apple Watch Series 3";
+    if ([model isEqualToString:@"Watch3,1"])    return @"Apple Watch Series 3";
     if ([model isEqualToString:@"Watch2,4"])    return @"Apple Watch Series 2";
     if ([model isEqualToString:@"Watch2,3"])    return @"Apple Watch Series 2";
     if ([model isEqualToString:@"Watch2,7"])    return @"Apple Watch Series 1";
@@ -388,6 +398,10 @@
     if ([model isEqualToString:@"Watch1,1"])    return @"Apple Watch";
 
     // iPad Pro
+    if ([model isEqualToString:@"iPad7,4"])     return @"iPad Pro";
+    if ([model isEqualToString:@"iPad7,3"])     return @"iPad Pro";
+    if ([model isEqualToString:@"iPad7,2"])     return @"iPad Pro";
+    if ([model isEqualToString:@"iPad7,1"])     return @"iPad Pro";
     if ([model isEqualToString:@"iPad6,8"])     return @"iPad Pro";
     if ([model isEqualToString:@"iPad6,7"])     return @"iPad Pro";
     if ([model isEqualToString:@"iPad6,4"])     return @"iPad Pro";
@@ -414,6 +428,8 @@
     if ([model isEqualToString:@"iPad2,5"])     return @"iPad Mini";
 
     // iPad
+    if ([model isEqualToString:@"iPad6,12"])    return @"iPad 5";
+    if ([model isEqualToString:@"iPad6,11"])    return @"iPad 5";
     if ([model isEqualToString:@"iPad3,6"])     return @"iPad 4";
     if ([model isEqualToString:@"iPad3,5"])     return @"iPad 4";
     if ([model isEqualToString:@"iPad3,4"])     return @"iPad 4";
