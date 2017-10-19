@@ -22,16 +22,16 @@
 
 - (BOOL)isConnectedDevice;
 - (BOOL)isPairedDevice;
-- (void)waitingForPairWithCompleteBlock:(void(^)())completeBlock;
+- (void)waitingForPairWithCompleteBlock:(void(^)(void))completeBlock;
 
 - (MCDeviceDiskUsage *)diskUsage;
 
 - (void)scanCrashLogSuccessBlock:(void(^)(NSArray *crashLogs))successBlock // array of MCDeviceCrashLogItem
                      updateBlock:(void(^)(NSUInteger totalItemCount, MCDeviceCrashLogItem *currentScannedItem))updateBlock
-                    failureBlock:(void(^)())failureBlock;
+                    failureBlock:(void(^)(void))failureBlock;
 - (void)cleanCrashLog:(NSArray *)crashLogs // array of MCDeviceCrashLogItem
-         successBlock:(void(^)())successBlock
+         successBlock:(void(^)(void))successBlock
           updateBlock:(void(^)(NSUInteger currentItemIndex))updateBlock
-         failureBlock:(void(^)())failureBlock;
+         failureBlock:(void(^)(void))failureBlock;
 
 @end

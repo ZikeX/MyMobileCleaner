@@ -2758,6 +2758,7 @@ plist_t build_contact_hello_msg(iphone_env *env)
 	[_deviceName release];
 	[_udid release];
 	[_lasterror release];
+    self.applicationAttributes = nil;
 	[super dealloc];
 }
 

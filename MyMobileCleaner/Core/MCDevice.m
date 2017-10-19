@@ -90,7 +90,7 @@
     return YES;
 }
 
-- (void)waitingForPairWithCompleteBlock:(void(^)())completeBlock
+- (void)waitingForPairWithCompleteBlock:(void(^)(void))completeBlock
 {
     self.needWaitingForPair = YES;
 
@@ -176,7 +176,7 @@
 
 - (void)scanCrashLogSuccessBlock:(void(^)(NSArray *crashLogs))successBlock
                      updateBlock:(void(^)(NSUInteger totalItemCount, MCDeviceCrashLogItem *currentScannedItem))updateBlock
-                    failureBlock:(void(^)())failureBlock
+                    failureBlock:(void(^)(void))failureBlock
 {
     DDLogInfo(@"===== start to scan crash log =====");
 
@@ -225,9 +225,9 @@
 }
 
 - (void)cleanCrashLog:(NSArray *)crashLogs
-         successBlock:(void(^)())successBlock
+         successBlock:(void(^)(void))successBlock
           updateBlock:(void(^)(NSUInteger currentItemIndex))updateBlock
-         failureBlock:(void(^)())failureBlock
+         failureBlock:(void(^)(void))failureBlock
 {
     DDLogInfo(@"===== start to clean crash log =====");
 
